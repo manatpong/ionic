@@ -12,4 +12,9 @@ page-home {
         background-color: #5bc0de;
         color: #ffff;
     }
+    .list-item {
+        ion-item {
+            padding-left: 20px;
+        }
+    }
 }

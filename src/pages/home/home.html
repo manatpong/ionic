@@ -7,24 +7,34 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list radio-group>
+    <!-- <ion-list>
+        <ion-item *ngFor="let movie of items">
+          
+        </ion-item>
+    </ion-list> -->
+    <ion-list class="list-item" radio-group *ngFor="let question of items">
         <ion-list-header class="list-head">
-          คุณสูบบุหรี่บ่อยแค่ไหน?
+            {{question.data.no}}. {{ question.data.name }}
         </ion-list-header>
       
         <ion-item>
-          <ion-label>2 ครั้งต่ออาทิตย์</ion-label>
-          <ion-radio checked="true" value="go"></ion-radio>
+          <ion-label>{{ question.data.choice_one }}</ion-label>
+          <ion-radio checked="true" value="choice_one"></ion-radio>
         </ion-item>
       
         <ion-item>
-          <ion-label class="text">4 ครั้งต่ออาทิตย์</ion-label>
-          <ion-radio value="rust"></ion-radio>
+          <ion-label class="text">{{ question.data.choice_two }}</ion-label>
+          <ion-radio value="choice_two"></ion-radio>
         </ion-item>
       
         <ion-item>
-          <ion-label class="text">ทุกวัน</ion-label>
-          <ion-radio value="python"></ion-radio>
+          <ion-label class="text">{{ question.data.choice_three }}</ion-label>
+          <ion-radio value="choice_three"></ion-radio>
         </ion-item>
+
+        <ion-item>
+            <ion-label class="text">{{ question.data.choice_four }}</ion-label>
+            <ion-radio value="choice_four"></ion-radio>
+          </ion-item>
       </ion-list>
 </ion-content>
