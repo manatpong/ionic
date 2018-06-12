@@ -18,6 +18,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AddMoviePage } from '../pages/add-movie/add-movie';
 import { Facebook } from '@ionic-native/facebook';
+import firebase from 'firebase';
 
 
 var config = {
@@ -46,6 +47,7 @@ var config = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),//แกนกลาง angular
+    firebase.initializeApp(config),
     AngularFireAuthModule, //เปน auth ที่เอามาใช้
     AngularFirestoreModule
   ],

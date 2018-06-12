@@ -6,11 +6,13 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 import BasePage from '../base';
+import firebase from 'firebase';
 
 
 
 @Component({
-  selector: 'page-login',
+  selector: 'page-import { FacebookAuthProvider } from '@firebase/auth-types'
+login',
   templateUrl: 'login.html',
 })
 export class LoginPage extends BasePage {
@@ -32,12 +34,25 @@ export class LoginPage extends BasePage {
 
   userData = null;
 
-  loginWithFB() {
-    this.facebook.login(['email', 'public_profile']).then((response: FacebookLoginResponse) => {
-      this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)', []).then(profile => {
-        this.userData = {email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name']};
-      })
-    });
+  // loginWithFB() {
+  //   this.facebook.login(['email', 'public_profile']).then((response: FacebookLoginResponse) => {
+  //     this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)', []).then(profile => {
+  //       this.userData = {email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name']};
+  //     })
+  //   });
+  // }
+
+  loginFB() {
+    let provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithRedirect(provider).then(()=>{
+      firebase.auth().getRedirectResult().then((result)=>{
+        alert(JSON.stringify(result))
+      }).catch(function (error) {
+        alert(JSON.stringify(error)
+        ))
+        
+      });
+    })
   }
 
   ionViewDidLoad() {

@@ -1,3 +1,4 @@
+import { ProfilePage } from './../profile/profile';
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { SendSuccessPage } from './../send-success/send-success';

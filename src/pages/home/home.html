@@ -18,29 +18,37 @@
             {{question.data.no}}. {{ question.data.name }}
         </ion-list-header>
       
-        <ion-item (click)="onClick()">
-          <ion-label>{{ question.data.choice_one }}</ion-label>
-          <!-- <ion-radio checked="true" [(ngModel)]="choice" value="1"></ion-radio> -->
-          <ion-radio value="1"></ion-radio>
-        </ion-item>
+        <div>
+          <ion-item (click)="onClick()">
+            <ion-label>{{ question.data.choice_one }}</ion-label>
+            <!-- <ion-radio checked="true" [(ngModel)]="choice" value="1"></ion-radio> -->
+            <ion-radio value="1"></ion-radio>
+          </ion-item>
+        </div>
       
-        <ion-item>
-          <ion-label class="text">{{ question.data.choice_two }}</ion-label>
-          <!-- <ion-radio [(ngModel)]="choice" value="2"></ion-radio> -->
-          <ion-radio value="2"></ion-radio>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label class="text">{{ question.data.choice_three }}</ion-label>
-          <!-- <ion-radio [(ngModel)]="choice" value="3"></ion-radio> -->
-          <ion-radio value="3"></ion-radio>
-        </ion-item>
+        <div>
+          <ion-item>
+            <ion-label class="text">{{ question.data.choice_two }}</ion-label>
+            <!-- <ion-radio [(ngModel)]="choice" value="2"></ion-radio> -->
+            <ion-radio value="2"></ion-radio>
+          </ion-item>
+        </div>
 
-        <ion-item>
+        <div *ngIf="question.data.choice_three">
+          <ion-item>
+            <ion-label class="text">{{ question.data.choice_three }}</ion-label>
+            <!-- <ion-radio [(ngModel)]="choice" value="3"></ion-radio> -->
+            <ion-radio value="3"></ion-radio>
+          </ion-item>
+        </div>
+        
+        <div *ngIf="question.data.choice_four">
+          <ion-item>
             <ion-label class="text">{{ question.data.choice_four }}</ion-label>
             <!-- <ion-radio [(ngModel)]="choice" value="4"></ion-radio> -->
             <ion-radio value="4"></ion-radio>
           </ion-item>
+        </div>
       </ion-list>
     </div>
     
