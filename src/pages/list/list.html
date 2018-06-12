@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let movie of items">
+          <ion-avatar item-start>
+            <img [src]="movie.data.img">
+          </ion-avatar>
+          <h2>{{movie.data.name}}</h2>
+          <p>{{movie.data.length}}</p>
+        </ion-item>
+    </ion-list>
+
+    <ion-fab right bottom>
+        <button ion-fab mini color="primary" (click)="navigateAddMovie()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-fab>
+</ion-content>
