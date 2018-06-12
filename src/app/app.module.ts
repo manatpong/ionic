@@ -1,3 +1,4 @@
+import { SendSuccessPage } from './../pages/send-success/send-success';
 import { RegisterPage } from './../pages/register/register';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -38,7 +39,8 @@ var config = {
     TabPage,
     LoginPage,
     RegisterPage,
-    AddMoviePage
+    AddMoviePage,
+    SendSuccessPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ var config = {
     TabPage,
     LoginPage,
     RegisterPage,
-    AddMoviePage
+    AddMoviePage,
+    SendSuccessPage
   ],
   providers: [
     StatusBar,

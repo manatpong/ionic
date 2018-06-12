@@ -1,17 +1,22 @@
+import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
+import { ToastController } from 'ionic-angular/components/toast/toast-controller';
+import { SendSuccessPage } from './../send-success/send-success';
 import { Component } from '@angular/core';
-import { NavController,NavParams } from 'ionic-angular';
+import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
+import BasePage from '../base';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage extends BasePage{
 
-  items = [];
+  items: any = [];
   
   uid: string = '';
+  choice: string = '';
   
 
   constructor(
@@ -19,7 +24,12 @@ export class HomePage {
     public navParams: NavParams,
     public firebaseAuth: AngularFireAuth,
     public firebaseFirestore: AngularFirestore,
-  ) { }
+    public popoverCtrl: PopoverController,
+    public toastCtrl: ToastController,
+    public loadingCtrl: LoadingController
+  ) { 
+    super(toastCtrl,loadingCtrl)
+  }
 
   ionViewDidLoad() {
     this.uid = this.firebaseAuth.auth.currentUser.uid;
@@ -41,6 +51,11 @@ export class HomePage {
 
     })
 
+  }
+
+  presentPopover() {
+    const popover = this.popoverCtrl.create(SendSuccessPage);
+    popover.present();
   }
 
 }

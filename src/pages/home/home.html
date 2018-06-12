@@ -19,22 +19,27 @@
       
         <ion-item>
           <ion-label>{{ question.data.choice_one }}</ion-label>
-          <ion-radio checked="true" value="choice_one"></ion-radio>
+          <!-- <ion-radio checked="true" [(ngModel)]="choice" value="1"></ion-radio> -->
+          <ion-radio value="1"></ion-radio>
         </ion-item>
       
         <ion-item>
           <ion-label class="text">{{ question.data.choice_two }}</ion-label>
-          <ion-radio value="choice_two"></ion-radio>
+          <!-- <ion-radio [(ngModel)]="choice" value="2"></ion-radio> -->
+          <ion-radio value="2"></ion-radio>
         </ion-item>
       
         <ion-item>
           <ion-label class="text">{{ question.data.choice_three }}</ion-label>
-          <ion-radio value="choice_three"></ion-radio>
+          <!-- <ion-radio [(ngModel)]="choice" value="3"></ion-radio> -->
+          <ion-radio value="3"></ion-radio>
         </ion-item>
 
         <ion-item>
             <ion-label class="text">{{ question.data.choice_four }}</ion-label>
-            <ion-radio value="choice_four"></ion-radio>
+            <!-- <ion-radio [(ngModel)]="choice" value="4"></ion-radio> -->
+            <ion-radio value="4"></ion-radio>
           </ion-item>
       </ion-list>
+      <button class="butt" ion-button full round (click)="post_data()">ส่งข้อมูล</button>
 </ion-content>
