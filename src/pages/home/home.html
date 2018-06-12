@@ -1,14 +1,30 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      แบบสอบถาม
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-list radio-group>
+        <ion-list-header class="list-head">
+          คุณสูบบุหรี่บ่อยแค่ไหน?
+        </ion-list-header>
+      
+        <ion-item>
+          <ion-label>2 ครั้งต่ออาทิตย์</ion-label>
+          <ion-radio checked="true" value="go"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label class="text">4 ครั้งต่ออาทิตย์</ion-label>
+          <ion-radio value="rust"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label class="text">ทุกวัน</ion-label>
+          <ion-radio value="python"></ion-radio>
+        </ion-item>
+      </ion-list>
 </ion-content>

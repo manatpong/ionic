@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
@@ -9,6 +10,7 @@ import { ListPage } from '../list/list';
 })
 export class TabPage {
 
+  homePage = HomePage;
   profilePage = ProfilePage;
   listPage = ListPage;
 

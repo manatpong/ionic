@@ -1,8 +1,9 @@
+import { AddMoviePage } from './../add-movie/add-movie';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { AddMoviePage } from '../add-movie/add-movie';
+import { PopoverController } from 'ionic-angular';
 
 /**
  * Generated class for the ListPage page.
@@ -27,8 +28,14 @@ export class ListPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public firebaseAuth: AngularFireAuth,
-    public firebaseFirestore: AngularFirestore
+    public firebaseFirestore: AngularFirestore,
+    public popoverCtrl: PopoverController
   ) {
+  }
+
+  presentPopover() {
+    const popover = this.popoverCtrl.create(AddMoviePage);
+    popover.present();
   }
 
   ionViewDidLoad() {
