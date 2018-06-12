@@ -12,12 +12,13 @@
           
         </ion-item>
     </ion-list> -->
-    <ion-list class="list-item" radio-group *ngFor="let question of items">
+    <div *ngFor="let question of items" >
+      <ion-list class="list-item" radio-group [(ngModel)]="question.model">
         <ion-list-header class="list-head">
             {{question.data.no}}. {{ question.data.name }}
         </ion-list-header>
       
-        <ion-item>
+        <ion-item (click)="onClick()">
           <ion-label>{{ question.data.choice_one }}</ion-label>
           <!-- <ion-radio checked="true" [(ngModel)]="choice" value="1"></ion-radio> -->
           <ion-radio value="1"></ion-radio>
@@ -41,5 +42,8 @@
             <ion-radio value="4"></ion-radio>
           </ion-item>
       </ion-list>
-      <button class="butt" ion-button full round (click)="post_data()">ส่งข้อมูล</button>
+    </div>
+    
+      <button class="butt" ion-button full round (click)="posting_data()">ส่งข้อมูล</button>
+      <button ion-button full (click)="onClick()">Test</button>
 </ion-content>

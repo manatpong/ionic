@@ -1,3 +1,4 @@
+import { AddMoviePage } from './../add-movie/add-movie';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -20,6 +21,10 @@ export class SendSuccessPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SendSuccessPage');
+  }
+
+  navigateAddmovie() {
+    this.navCtrl.push(AddMoviePage);
   }
 
 }
