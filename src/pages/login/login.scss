@@ -1,3 +1,60 @@
 page-login {
-
+    font-family: cursive;
+    .bg{
+        background-color: darkcyan;
+    }
+   
+    .row-one{
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        margin-top: 20px;
+            .text p{
+                font-weight: 900;
+                font-size: 30px;
+                color: rgb(104, 48, 9);
+                
+            }
+            .text {
+                margin:auto;
+            }
+        }
+    .row-two{
+            display: flex;
+            flex-direction: row;
+            height: 60px;
+            width: 100%;
+            .img img{
+                width: 70px;
+                height: 70px;
+            }
+            .img {
+                margin: auto;
+            }
+    }
+    .row-three{
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        text-align: center;
+            .text p{
+                font-weight: bold;
+                font-size: 25px;
+                color: sandybrown;
+            }
+            .text {
+                margin: auto;
+            }
+        }
+    .login-but{
+        color: #ffff;
+        background-color: rgb(196, 123, 59);
+    }
+    .regis-but{
+        color: rgb(138, 88, 44);
+        background-color: darkcyan;
+        font-size: 30px;
+        font-weight: 600;
+        height: 40px;
+    }
 }
