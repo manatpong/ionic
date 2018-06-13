@@ -28,6 +28,7 @@ export class HomePage extends BasePage{
   score5: string = '';
   score6: string = '';
   score = [this.score1,this.score2,this.score3,this.score4,this.score5,this.score6];
+  test: number;
   
 
   constructor(
@@ -57,9 +58,10 @@ export class HomePage extends BasePage{
           id : action.payload.doc.id,
           data : action.payload.doc.data(),
           model : null,
-          myscore : null,
+          score : null,
         })
         console.log(this.items);
+        console.log(this.items.data);
       });
 
     })
@@ -68,7 +70,9 @@ export class HomePage extends BasePage{
 
   onClick(){
     console.log('hello');
-    console.log(this.items[0]);
+    console.log(this.items[0].model.value);
+    this.test = 1+1;
+    
   }
 
   presentPopover() {
@@ -78,7 +82,7 @@ export class HomePage extends BasePage{
 
   posting_data(){
 
-    const answer = {'answerOne': this.items[0].model,'answerTwo':this.items[1].model,'answerThree':this.items[2].model};
+    //const answer = {'question1': this.items[0].model,'question2':this.items[1].model,'question3':this.items[2].model,'question4':this.items[3].model,'question5':this.items[4].model,'question6':this.items[5].model};
 
     
 
@@ -95,8 +99,8 @@ export class HomePage extends BasePage{
         .doc(this.firebaseAuth.auth.currentUser.uid)
         .collection('answer')
         .add({
-          choice: answer,
-          question: [1,2,3],
+          Answer: {'question1': this.items[0].model,'question2':this.items[1].model,'question3':this.items[2].model,'question4':this.items[3].model,'question5':this.items[4].model,'question6':this.items[5].model}
+          //question: ['question1','question2','question3','question4','question5','question6'],
         })
         .then(data =>{
           this.hideLoading();

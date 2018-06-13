@@ -13,6 +13,7 @@
         </ion-item>
     </ion-list> -->
     <div *ngFor="let question of items" >
+      
       <ion-list class="list-item" radio-group [(ngModel)]="question.model">
         <ion-list-header class="list-head">
             {{question.data.no}}. {{ question.data.name }}
@@ -22,7 +23,7 @@
           <ion-item (click)="onClick()">
             <ion-label>{{ question.data.choice_one }}</ion-label>
             <!-- <ion-radio checked="true" [(ngModel)]="choice" value="1"></ion-radio> -->
-            <ion-radio value="1"></ion-radio>
+            <ion-radio name="one" value="1"></ion-radio>
           </ion-item>
         </div>
       
@@ -30,7 +31,7 @@
           <ion-item>
             <ion-label class="text">{{ question.data.choice_two }}</ion-label>
             <!-- <ion-radio [(ngModel)]="choice" value="2"></ion-radio> -->
-            <ion-radio value="2"></ion-radio>
+            <ion-radio name="two" value="2"></ion-radio>
           </ion-item>
         </div>
 
@@ -38,7 +39,7 @@
           <ion-item>
             <ion-label class="text">{{ question.data.choice_three }}</ion-label>
             <!-- <ion-radio [(ngModel)]="choice" value="3"></ion-radio> -->
-            <ion-radio value="3"></ion-radio>
+            <ion-radio name="three" value="3"></ion-radio>
           </ion-item>
         </div>
         
@@ -46,11 +47,12 @@
           <ion-item>
             <ion-label class="text">{{ question.data.choice_four }}</ion-label>
             <!-- <ion-radio [(ngModel)]="choice" value="4"></ion-radio> -->
-            <ion-radio value="4"></ion-radio>
+            <ion-radio name="four" value="4"></ion-radio>
           </ion-item>
         </div>
       </ion-list>
-    </div>
+      </div>
+
     
       <button class="butt" ion-button full round (click)="posting_data()">ส่งข้อมูล</button>
       <button ion-button full (click)="onClick()">Test</button>
