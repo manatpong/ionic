@@ -1,3 +1,4 @@
+import { FirebaseAuth, FacebookAuthProvider } from '@firebase/auth-types';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { RegisterPage } from './../register/register';
 import { Component } from '@angular/core';
@@ -9,10 +10,8 @@ import BasePage from '../base';
 import firebase from 'firebase';
 
 
-
 @Component({
-  selector: 'page-import { FacebookAuthProvider } from '@firebase/auth-types'
-login',
+  selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage extends BasePage {
@@ -26,7 +25,7 @@ export class LoginPage extends BasePage {
     public firebaseAuth: AngularFireAuth,
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
-    private facebook: Facebook,
+    public facebook: Facebook,
   ) {
     super(toastCtrl,loadingCtrl)
 
@@ -34,24 +33,16 @@ export class LoginPage extends BasePage {
 
   userData = null;
 
-  // loginWithFB() {
-  //   this.facebook.login(['email', 'public_profile']).then((response: FacebookLoginResponse) => {
-  //     this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)', []).then(profile => {
-  //       this.userData = {email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name']};
-  //     })
-  //   });
-  // }
-
   loginFB() {
-    let provider = new firebase.auth.FacebookAuthProvider();
-    firebase.auth().signInWithRedirect(provider).then(()=>{
-      firebase.auth().getRedirectResult().then((result)=>{
-        alert(JSON.stringify(result))
-      }).catch(function (error) {
-        alert(JSON.stringify(error)
-        ))
-        
-      });
+    this.facebook.login(['email']).then(res => {
+       const fc = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken)
+       firebase.auth().signInWithCredential(fc).then(fs=>{
+         alert("firebase sec")
+       }).catch(ferr => {
+         alert("firebase error")
+       })
+    }).catch(err => {
+      alert(JSON.stringify(err))
     })
   }
 

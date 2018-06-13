@@ -12,25 +12,27 @@ import { ProfilePage } from '../pages/profile/profile';
 import { ListPage } from '../pages/list/list';
 import { TabPage } from '../pages/tab/tab';
 import { LoginPage } from '../pages/login/login';
+import { ResultPage } from './../pages/result/result';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AddMoviePage } from '../pages/add-movie/add-movie';
+
 import { Facebook } from '@ionic-native/facebook';
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 
 
-var config = {
+export const config = {
   apiKey: "AIzaSyANCkuG6yGUomIkq7Z-s4GkV44kNyKqPZ8",
-  authDomain: "ionic-course-65318.firebaseapp.com",
-  databaseURL: "https://ionic-course-65318.firebaseio.com",
-  projectId: "ionic-course-65318",
-  storageBucket: "ionic-course-65318.appspot.com",
-  messagingSenderId: "558992279547"
+    authDomain: "ionic-course-65318.firebaseapp.com",
+    databaseURL: "https://ionic-course-65318.firebaseio.com",
+    projectId: "ionic-course-65318",
+    storageBucket: "ionic-course-65318.appspot.com",
+    messagingSenderId: "558992279547"
 };
 
-
+firebase.initializeApp(config)
 @NgModule({
   declarations: [
     MyApp,
@@ -41,13 +43,14 @@ var config = {
     LoginPage,
     RegisterPage,
     AddMoviePage,
-    SendSuccessPage
+    SendSuccessPage,
+    ResultPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),//แกนกลาง angular
-    firebase.initializeApp(config),
+    
     AngularFireAuthModule, //เปน auth ที่เอามาใช้
     AngularFirestoreModule
   ],
@@ -61,13 +64,15 @@ var config = {
     LoginPage,
     RegisterPage,
     AddMoviePage,
-    SendSuccessPage
+    SendSuccessPage,
+    ResultPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Facebook
+    Facebook,
+    //firebase
   ],
 })
 export class AppModule {}
