@@ -22,20 +22,20 @@
   <ion-list>
 
     <ion-item>
-      <ion-label placeholder="Email">Email</ion-label>
-      <ion-input type="email" [(ngModel)]="email"></ion-input>
+      <!-- <ion-label placeholder="Email">Email</ion-label> -->
+      <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label placeholder="Password">Password</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
+      <!-- <ion-label placeholder="Password">Password</ion-label> -->
+      <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
 
   </ion-list>
 
     <button ion-button full (click)="login()" class="login-but">Login</button>
-    <button ion-button full (click)="navigateRegister()" class="regis-but">Register</button>
-    <button ion-button full (click)="loginFB()">Login with Facebook</button>
+    <button ion-button full clear (click)="navigateRegister()" class="regis-but">Register</button>
+    <button ion-button full (click)="loginFB()" class="fb-but">Login with Facebook</button>
 
     <ion-card *ngIf="userData">
         <ion-card-header>

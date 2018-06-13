@@ -47,14 +47,30 @@ page-login {
             }
         }
     .login-but{
+        height: 46px;
         color: #ffff;
         background-color: rgb(196, 123, 59);
     }
+    .login-but:hover{
+        font-size: 18px;
+    }
     .regis-but{
         color: rgb(138, 88, 44);
-        background-color: darkcyan;
+        background-color: none;
         font-size: 30px;
         font-weight: 600;
-        height: 40px;
+        height: 45px;
+    }
+    .regis-but:hover{
+        font-size: 34px;
+    }
+    .regis-but:active{
+        background-color: darkcyan;
+    }
+    .fb-but:hover{
+        font-size: 17px;
+    }
+    .fb-but{
+        height: 48px;
     }
 }

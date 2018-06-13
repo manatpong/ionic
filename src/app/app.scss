@@ -88,6 +88,20 @@ h1 {
     margin: 0.67em 0;
 }
 
+@font-face {
+    font-family: Itim;
+    src: url('../assets/fonts/Itim.woff2');
+}
+
+@font-face{
+    font-family: Itim;
+    src: url('../assets/fonts/Itim_thai.woff2');
+}
+
+*{
+    font-family: Itim;
+}
+
 
 /* Grouping content
      ========================================================================== */

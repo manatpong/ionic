@@ -1,3 +1,62 @@
 page-register {
-
+    font-family: cursive;
+    .bg{
+        background-color: darkcyan;
+    }
+    .regis-but{
+        color: rgb(138, 88, 44);
+        background-color: darkcyan;
+        font-size: 30px;
+        font-weight: 600;
+        height: 45px;
+    }
+    .regis-but:hover{
+        font-size: 34px;
+    }
+    .regis-but:active{
+        background-color: darkcyan;
+    }
+    .row-two{
+        display: flex;
+        flex-direction: row;
+        height: 15%;
+        widows: 100%;
+        .img{
+            margin:auto;
+            img{
+                width: 80px;
+            }
+        }
+    }
+    .row-three{
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        text-align: center;
+            .text p{
+                font-weight: bold;
+                font-size: 25px;
+                color: sandybrown;
+            }
+            .text {
+                margin: auto;
+            }
+        }
+    .nav-back div{
+        background: darkcyan;
+    }
+    .row-one{
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+            .text p{
+                font-weight: 900;
+                font-size: 30px;
+                color: rgb(104, 48, 9);
+                
+            }
+            .text {
+                margin:auto;
+            }
+        }
 }

@@ -1,4 +1,5 @@
 page-home {
+    font-family: Itim;
     .list-head {
         font-family: cursive;
         font-size: 18px;
@@ -15,6 +16,7 @@ page-home {
     .list-item {
         ion-item {
             padding-left: 20px;
+            
         }
         margin-bottom: 50px;
     }
@@ -23,4 +25,14 @@ page-home {
         height: 40px;
         margin: auto
     }
+    .bg{
+        background-color: darkcyan;
+    }
+    .fontt{
+        font-family: Itim;
+    }
+}
+
+page-home .text{
+    font-family: Itim;
 }

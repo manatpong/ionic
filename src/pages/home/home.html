@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bg">
     <!-- <ion-list>
         <ion-item *ngFor="let movie of items">
           
@@ -21,7 +21,7 @@
       
         <div>
           <ion-item (click)="onClick()">
-            <ion-label>{{ question.data.choice_one }}</ion-label>
+            <ion-label class="fontt">{{ question.data.choice_one }}</ion-label>
             <!-- <ion-radio checked="true" [(ngModel)]="choice" value="1"></ion-radio> -->
             <ion-radio name="one" value="1"></ion-radio>
           </ion-item>
