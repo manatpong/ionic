@@ -7,6 +7,7 @@ import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import BasePage from '../base';
+import { ResultPage } from '../result/result';
 
 @Component({
   selector: 'page-home',
@@ -18,13 +19,15 @@ export class HomePage extends BasePage{
   
   uid: string = '';
   choice: string = '';
-  question1: string = '';
-  question2: string = '';
-  question3: string = '';
   aaa: string = '';
-  answer = [ this.question1, this.question2, this.question3];
-
-
+  //answer = [ this.question1, this.question2, this.question3];
+  score1: string = '';
+  score2: string = '';
+  score3: string = '';
+  score4: string = '';
+  score5: string = '';
+  score6: string = '';
+  score = [this.score1,this.score2,this.score3,this.score4,this.score5,this.score6];
   
 
   constructor(
@@ -53,7 +56,8 @@ export class HomePage extends BasePage{
         this.items.push({
           id : action.payload.doc.id,
           data : action.payload.doc.data(),
-          model : ['question1','question2','question3']
+          model : null,
+          myscore : null,
         })
         console.log(this.items);
       });
@@ -63,15 +67,12 @@ export class HomePage extends BasePage{
   }
 
   onClick(){
-    console.log(this.question1);
-    console.log(this.question2);
-    console.log(this.question3);
     console.log('hello');
-    console.log(this.items);
+    console.log(this.items[0]);
   }
 
   presentPopover() {
-    const popover = this.popoverCtrl.create(SendSuccessPage);
+    const popover = this.popoverCtrl.create(ResultPage);
     popover.present();
   }
 
@@ -79,14 +80,23 @@ export class HomePage extends BasePage{
 
     const answer = {'answerOne': this.items[0].model,'answerTwo':this.items[1].model,'answerThree':this.items[2].model};
 
-    this.showLoading("Posting...")
-      this.firebaseFirestore
+    
+
+      if(this.items[0].model === null || this.items[1].model === null || this.items[2].model === null 
+        || this.items[3].model === null || this.items[4].model === null || this.items[5].model === null){
+        console.log('no answer');
+        this.showToastMiddle('กรุณาตอบคำถามให้ครบทุกข้อ');
+      }
+      else
+      {
+        this.showLoading("Posting...")
+       this.firebaseFirestore
         .collection('users')
         .doc(this.firebaseAuth.auth.currentUser.uid)
         .collection('answer')
         .add({
           choice: answer,
-          question: [1,2,3]
+          question: [1,2,3],
         })
         .then(data =>{
           this.hideLoading();
@@ -96,8 +106,7 @@ export class HomePage extends BasePage{
         .catch(error => {
           this.hideLoading();
         })
-
-
+      }
 
   }
 

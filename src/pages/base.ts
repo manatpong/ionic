@@ -29,5 +29,13 @@ export default abstract class BasePage {
       this.loader.dismiss();
     }
     
+    showToastMiddle(msg){
+      this.toastCtrl.create({
+        message : msg,
+        duration : 3000,
+        position: "top"
+      })
+      .present()
+    }
 }// abstract class เป็นคลาสที่เอาไปใช้ธรรมดาไม่ได้ ต้องสืบทอดเท่านั้น
 // export ให้ไฟล์อื่นดึงไปใช้ได้
