@@ -1,4 +1,4 @@
-import { ProfilePage } from './../profile/profile';
+
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { SendSuccessPage } from './../send-success/send-success';
@@ -7,7 +7,6 @@ import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import BasePage from '../base';
-import { ResultPage } from '../result/result';
 
 @Component({
   selector: 'page-home',
@@ -76,7 +75,7 @@ export class HomePage extends BasePage{
   }
 
   presentPopover() {
-    const popover = this.popoverCtrl.create(ResultPage);
+    const popover = this.popoverCtrl.create(SendSuccessPage);
     popover.present();
   }
 

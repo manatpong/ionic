@@ -1,5 +1,4 @@
-import { ProfilePage } from './../profile/profile';
-import { AddMoviePage } from './../add-movie/add-movie';
+import { CalendarPage } from './../calendar/calendar';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -25,7 +24,7 @@ export class SendSuccessPage {
   }
 
   navigateAddmovie() {
-    this.navCtrl.push(ProfilePage);
+    this.navCtrl.push(CalendarPage);
   }
 
 }
