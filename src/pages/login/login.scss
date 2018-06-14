@@ -7,11 +7,11 @@ page-login {
     .row-one{
         display: flex;
         flex-direction: row;
-        height: 50px;
+        height: 10%;
         margin-top: 20px;
             .text p{
                 font-weight: 900;
-                font-size: 30px;
+                font-size: 2.3em;
                 color: rgb(104, 48, 9);
                 
             }
@@ -22,11 +22,10 @@ page-login {
     .row-two{
             display: flex;
             flex-direction: row;
-            height: 60px;
             width: 100%;
             .img img{
-                width: 70px;
-                height: 70px;
+                width: 7em;
+                height: 7em;
             }
             .img {
                 margin: auto;
@@ -35,7 +34,7 @@ page-login {
     .row-three{
         display: flex;
         flex-direction: row;
-        height: 50px;
+        height: 10%;
         text-align: center;
             .text p{
                 font-weight: bold;
@@ -44,6 +43,7 @@ page-login {
             }
             .text {
                 margin: auto;
+                margin-top: 10px;
             }
         }
     .login-but{

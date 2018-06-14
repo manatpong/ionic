@@ -4,8 +4,9 @@ page-register {
         background-color: darkcyan;
     }
     .regis-but{
-        color: rgb(138, 88, 44);
-        background-color: darkcyan;
+       // color: rgb(138, 88, 44);
+       color: #ffff;
+        background-color: rgb(138, 88, 44);
         font-size: 30px;
         font-weight: 600;
         height: 45px;
@@ -14,7 +15,7 @@ page-register {
         font-size: 34px;
     }
     .regis-but:active{
-        background-color: darkcyan;
+        background-color: rgb(138, 88, 44);
     }
     .row-two{
         display: flex;

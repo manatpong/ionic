@@ -23,7 +23,12 @@ page-home {
     .butt {
         width: 80%;
         height: 40px;
-        margin: auto
+        margin: auto;
+       background-color: rgb(138, 88, 44);
+       font-size: 18px;
+    }
+    .butt:hover{
+        font-size: 20px;
     }
     .bg{
         background-color: darkcyan;
