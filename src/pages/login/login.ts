@@ -1,3 +1,4 @@
+import { ProfilePage } from './../profile/profile';
 import { FirebaseAuth, FacebookAuthProvider } from '@firebase/auth-types';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { RegisterPage } from './../register/register';
@@ -18,6 +19,9 @@ export class LoginPage extends BasePage {
   
   email = '';
   password = '';
+  isLoggedIn:boolean = false;
+  users: any;
+
 
   constructor(
     public navCtrl: NavController,
@@ -25,32 +29,75 @@ export class LoginPage extends BasePage {
     public firebaseAuth: AngularFireAuth,
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
-    public facebook: Facebook,
+    //public facebook: Facebook,
+    private fb: Facebook,
   ) {
     super(toastCtrl,loadingCtrl)
+    fb.getLoginStatus()
+    .then(res => {
+      console.log(res.status);
+      if(res.status === "connect") {
+        this.isLoggedIn = true;
+        this.navCtrl.push(ProfilePage);
+      } else {
+        this.isLoggedIn = false;
+      }
+    })
+    .catch(e => console.log(e));
 
   }
 
+  //// FB start ////
+  login() {
+    this.fb.login(['public_profile', 'user_friends', 'email'])
+      .then(res => {
+        if(res.status === "connected") {
+          this.isLoggedIn = true;
+          this.getUserDetail(res.authResponse.userID);
+        } else {
+          this.isLoggedIn = false;
+        }
+      })
+      .catch(e => console.log('Error logging into Facebook', e));
+  }
   userData = null;
 
-  loginFB() {
-    this.facebook.login(['email']).then(res => {
-       const fc = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken)
-       firebase.auth().signInWithCredential(fc).then(fs=>{
-         alert("firebase sec")
-       }).catch(ferr => {
-         alert("firebase error")
-       })
-    }).catch(err => {
-      alert(JSON.stringify(err))
-    })
+  logout() {
+    this.fb.logout()
+      .then( res => this.isLoggedIn = false)
+      .catch(e => console.log('Error logout from Facebook', e));
   }
+  getUserDetail(userid) {
+    this.fb.api("/"+userid+"/?fields=id,email,name,picture,gender",["public_profile"])
+      .then(res => {
+        console.log(res);
+        this.users = res;
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+  //// FB end ///
+
+  // loginFB() {
+  //   this.facebook.login(['email']).then(res => {
+  //      const fc = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken)
+  //      firebase.auth().signInWithCredential(fc).then(fs=>{
+  //        alert("firebase sec")
+  //      }).catch(ferr => {
+  //        alert("firebase error")
+  //      })
+  //   }).catch(err => {
+  //     alert(JSON.stringify(err))
+  //   })
+  // }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  login(){
+  loginNormal(){
     this.showLoading("Logging in...")
     this.firebaseAuth
     .auth

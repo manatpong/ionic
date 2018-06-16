@@ -33,13 +33,28 @@
 
   </ion-list>
 
-    <button ion-button full (click)="login()" class="login-but">Login</button>
+    <button ion-button full (click)="loginNormal()" class="login-but">Login</button>
     <button ion-button full clear (click)="navigateRegister()" class="regis-but">Register</button>
-    <button ion-button full (click)="loginFB()" class="fb-but">Login with Facebook</button>
 
-    <ion-card *ngIf="userData">
-        <ion-card-header>
-            {{ userData.username }}
-        </ion-card-header>  
-    </ion-card>
+    <div *ngIf="isLoggedIn; else facebookLogin">
+        <h2>Hi, {{users.name}} ({{users.email}})</h2>
+        <p>
+          Gender: {{users.gender}}
+        </p>
+        <p>
+          <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+        </p>
+        <p>
+          <button ion-button icon-right (click)="logout()">
+            Logout
+          </button>
+        </p>
+      </div>
+   
+    <ng-template #facebookLogin>
+      <button ion-button full (click)="login()" class="fb-but">
+        <ion-icon name="logo-facebook"></ion-icon>
+        Login with Facebook
+      </button>
+    </ng-template>
 </ion-content>

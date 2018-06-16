@@ -26,11 +26,12 @@
     "@ionic-native/status-bar": "4.4.0",
     "@ionic/storage": "2.1.3",
     "angularfire2": "^5.0.0-rc.6",
-    "cordova-android": "7.0.0",
+    "cordova-android": "^7.0.0",
     "cordova-plugin-browsertab": "^0.2.0",
     "cordova-plugin-buildinfo": "^2.0.1",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-facebook4": "^2.1.0",
     "cordova-plugin-inappbrowser": "^3.0.0",
     "cordova-plugin-ionic-webview": "^1.2.1",
     "cordova-plugin-splashscreen": "^4.1.0",
@@ -60,7 +61,12 @@
       "cordova-plugin-buildinfo": {},
       "cordova-universal-links-plugin": {},
       "cordova-plugin-browsertab": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "1679881982132140",
+        "APP_NAME": "ionic-app",
+        "ANDROID_SDK_VERSION": "4.+"
+      }
     },
     "platforms": [
       "android"
