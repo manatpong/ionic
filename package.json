@@ -20,6 +20,7 @@
     "@angular/http": "5.0.3",
     "@angular/platform-browser": "5.0.3",
     "@angular/platform-browser-dynamic": "5.0.3",
+    "@ionic-native/calendar": "^4.7.0",
     "@ionic-native/core": "4.4.0",
     "@ionic-native/facebook": "^4.7.0",
     "@ionic-native/splash-screen": "4.4.0",
@@ -29,6 +30,7 @@
     "cordova-android": "^7.0.0",
     "cordova-plugin-browsertab": "^0.2.0",
     "cordova-plugin-buildinfo": "^2.0.1",
+    "cordova-plugin-calendar": "^5.1.2",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-facebook4": "^2.1.0",
@@ -40,6 +42,8 @@
     "firebase": "^4.12.1",
     "ionic-angular": "3.9.2",
     "ionic-plugin-keyboard": "^2.2.1",
+    "ionic2-calendar": "^0.4.4",
+    "ionic3-calendar": "^1.1.6",
     "ionicons": "3.0.0",
     "promise-polyfill": "^7.0.2",
     "rxjs": "5.5.2",
@@ -66,7 +70,8 @@
         "APP_ID": "1679881982132140",
         "APP_NAME": "ionic-app",
         "ANDROID_SDK_VERSION": "4.+"
-      }
+      },
+      "cordova-plugin-calendar": {}
     },
     "platforms": [
       "android"

@@ -16,10 +16,11 @@
 <ion-content class="no-scroll" padding>
   <div class="text">
       <p class="success-text">ส่งข้อมูลสำเร็จ ✓</p>
+      <div [(ngModel)]="score"></div>
       <p class="normal-text">คุณสามารถดูคะแนนแบบประเมินได้</p>
   </div>
   <div class="div-button">
-      <button class="score_button" ion-button round (click)="navigateAddmovie()">ดูคะแนน</button>
+      <button class="score_button" ion-button round (click)="navigateCalendar()">ดูคะแนน</button>
   </div>
  
   

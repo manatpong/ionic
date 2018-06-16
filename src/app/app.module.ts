@@ -1,3 +1,6 @@
+import { AddEventPage } from './../pages/add-event/add-event';
+
+import { CalendarPage } from './../pages/calendar/calendar';
 import { SendSuccessPage } from './../pages/send-success/send-success';
 import { RegisterPage } from './../pages/register/register';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,6 +24,7 @@ import { AddMoviePage } from '../pages/add-movie/add-movie';
 
 import { Facebook } from '@ionic-native/facebook';
 import * as firebase from 'firebase';
+import { Calendar } from '@ionic-native/calendar';
 
 
 export const config = {
@@ -44,15 +48,18 @@ firebase.initializeApp(config)
     RegisterPage,
     AddMoviePage,
     SendSuccessPage,
-    ResultPage
+    ResultPage,
+    CalendarPage,
+    AddEventPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),//แกนกลาง angular
-    
     AngularFireAuthModule, //เปน auth ที่เอามาใช้
-    AngularFirestoreModule
+    AngularFirestoreModule,
+   // CalendarModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,13 +72,16 @@ firebase.initializeApp(config)
     RegisterPage,
     AddMoviePage,
     SendSuccessPage,
-    ResultPage
+    ResultPage,
+    CalendarPage,
+    AddEventPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Facebook,
+    Calendar
     //firebase
   ],
 })

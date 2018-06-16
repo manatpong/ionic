@@ -38,7 +38,7 @@ export class LoginPage extends BasePage {
       console.log(res.status);
       if(res.status === "connect") {
         this.isLoggedIn = true;
-        this.navCtrl.push(ProfilePage);
+        
       } else {
         this.isLoggedIn = false;
       }
@@ -53,6 +53,7 @@ export class LoginPage extends BasePage {
       .then(res => {
         if(res.status === "connected") {
           this.isLoggedIn = true;
+          this.navCtrl.push(ProfilePage);
           this.getUserDetail(res.authResponse.userID);
         } else {
           this.isLoggedIn = false;

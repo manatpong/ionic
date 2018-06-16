@@ -1,7 +1,6 @@
-import { ProfilePage } from './../profile/profile';
+import { CalendarPage } from './../calendar/calendar';
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
-import { SendSuccessPage } from './../send-success/send-success';
 import { Component } from '@angular/core';
 import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -21,15 +20,14 @@ export class HomePage extends BasePage{
   choice: string = '';
   aaa: string = '';
   //answer = [ this.question1, this.question2, this.question3];
-  score1: string = '';
-  score2: string = '';
-  score3: string = '';
-  score4: string = '';
-  score5: string = '';
-  score6: string = '';
-  score = [this.score1,this.score2,this.score3,this.score4,this.score5,this.score6];
-  test: number;
-  
+  q1: number;
+  q2: number;
+  q3: number;
+  q4: number;
+  q5: number;
+  q6: number;
+  total_score: number;
+  test_score: number;
 
   constructor(
     public navCtrl: NavController,
@@ -69,15 +67,77 @@ export class HomePage extends BasePage{
   }
 
   onClick(){
-    console.log('hello');
-    console.log(this.items[0].model.value);
-    this.test = 1+1;
+    // console.log('hello');
+    // console.log(this.items[0].model.value);
+    // this.test = 1+1;
+    //this.navCtrl.push(CalendarPage);
+    const popover = this.popoverCtrl.create(ResultPage,{test_score: 10});
+    popover.present();
     
   }
 
   presentPopover() {
-    const popover = this.popoverCtrl.create(ResultPage);
+    
+    ///// question1 ////////
+    if(this.items[0].model == 1) {
+      this.q1 = 0;
+    }
+    else if(this.items[0].model == 2) {
+      this.q1 = 1;
+    }
+    else if(this.items[0].model == 3) {
+      this.q1 = 2;
+    }
+    else if(this.items[0].model == 4) {
+      this.q1 = 3;
+    }
+///////////////
+    if(this.items[1].model == 1) {
+      this.q2 = 3;
+    }
+    else if(this.items[1].model == 2) {
+      this.q2 = 2;
+    }
+    else if(this.items[1].model == 3) {
+      this.q2 = 1;
+    }
+    else if(this.items[1].model == 4) {
+      this.q2 = 0;
+    }
+
+    if(this.items[2].model == 1) {
+      this.q3 = 1;
+    }
+    else if(this.items[2].model == 2) {
+      this.q3 = 0;
+    }
+
+    if(this.items[3].model == 1) {
+      this.q4 = 1;
+    }
+    else if(this.items[3].model == 2) {
+      this.q4 = 0;
+    }
+    ////////// q5 //////////
+    if(this.items[4].model == 1) {
+      this.q5 = 1;
+    }
+    else if(this.items[4].model == 2) {
+      this.q5 = 0;
+    }
+
+    if(this.items[5].model == 1) {
+      this.q6 = 1;
+    }
+    else if(this.items[5].model == 2) {
+      this.q6 = 0;
+    }
+
+    this.total_score = this.q1 + this.q2 + this.q3 + this.q4 + this.q5 + this.q6;
+    //console.log(this.total_score);
+    const popover = this.popoverCtrl.create(ResultPage,this.total_score);
     popover.present();
+
   }
 
   posting_data(){

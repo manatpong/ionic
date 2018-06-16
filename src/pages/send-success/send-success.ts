@@ -1,5 +1,4 @@
-import { ProfilePage } from './../profile/profile';
-import { AddMoviePage } from './../add-movie/add-movie';
+import { CalendarPage } from './../calendar/calendar';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -17,15 +16,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SendSuccessPage {
 
+  
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SendSuccessPage');
+    console.log(this.score);
   }
 
-  navigateAddmovie() {
-    this.navCtrl.push(ProfilePage);
+  navigateCalendar() {
+    this.navCtrl.push(CalendarPage);
   }
+
+  score = this.navParams.get('test_score');
 
 }

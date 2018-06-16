@@ -21,10 +21,12 @@ export class ResultPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultPage');
+    console.log(this.score);
   }
 
   navigateCalender() {
     this.navCtrl.push(AddMoviePage);
   }
 
+  score = this.navParams.get('test_score');
 }
