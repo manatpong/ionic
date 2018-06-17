@@ -28,6 +28,8 @@ export class HomePage extends BasePage{
   q6: number;
   total_score: number;
   test_score: number;
+  head_text: string = '';
+  text: string = '';
 
   constructor(
     public navCtrl: NavController,
@@ -132,10 +134,29 @@ export class HomePage extends BasePage{
     else if(this.items[5].model == 2) {
       this.q6 = 0;
     }
+    
 
     this.total_score = this.q1 + this.q2 + this.q3 + this.q4 + this.q5 + this.q6;
+
+    if( this.total_score >= 0 ) {
+      this.head_text = 'ยินดีด้วย !!';
+      this.text = 'คุณไม่ติด Nicotine';
+      
+    }
+    else if ( this.total_score >= 4) {
+      this.head_text = 'พยายามเข้า !!';
+      this.text = 'คุณติด Nicotine ระดับปานกลาง';
+    }
+    else {
+      this.head_text = 'น่าเสียใจ !!';
+      this.text = 'คุณติด Nicotine ระดับสูง';
+    }
     //console.log(this.total_score);
-    const popover = this.popoverCtrl.create(ResultPage,this.total_score);
+    const popover = this.popoverCtrl.create(ResultPage,{ 
+      test_score: this.total_score,
+      Htext: this.head_text,
+      Ntext: this.text
+     });
     popover.present();
 
   }
