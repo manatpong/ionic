@@ -1,5 +1,4 @@
 import { CalendarPage } from './../calendar/calendar';
-import { AddMoviePage } from './../add-movie/add-movie';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -17,14 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ResultPage {
 
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultPage');
-    console.log(this.score);
-    console.log(this.head_text);
+    // console.log(this.score);
+    console.log(this.result);
+    // console.log(this.head_text);
+   
     
   }
 
@@ -33,9 +35,9 @@ export class ResultPage {
   }
 
   
-  score = this.navParams.get('test_score');
-  head_text = this.navParams.data['Htext']; // ใช้แบบไหนก็ได้
-  text = this.navParams.get('Ntext');
+  // score = this.navParams.get('test_score');
+  result = this.navParams.data; // ใช้แบบไหนก็ได้
+  // text = this.navParams.get('Ntext');
   
   
 }

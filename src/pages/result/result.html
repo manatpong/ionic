@@ -16,9 +16,10 @@
 <ion-content class="no-scroll" padding>
   <div class="text">
       <p class="success-text">ส่งข้อมูลสำเร็จ ✓</p>
-      <p class="success-text">{{ head_text }}</p>
-      <p class="normal-text">{{ text }}</p>
-      <p class="success-text">คะแนนที่คุณได้ {{ score }}</p>
+      <p class="success-text">คะแนนประเมิน {{ result['Tscore'] }} / 10</p>
+      <p class="success-text">{{ result['Htext'] }}</p>
+      <p class="normal-text">{{ result['Ntext'] }}</p>
+      
   </div>
   <div class="div-button">
       <button class="score_button" ion-button round (click)="navigateCalender()">ดูคะแนน</button>

@@ -30,6 +30,8 @@ export class HomePage extends BasePage{
   test_score: number;
   head_text: string = '';
   text: string = '';
+  datenow = new Date();
+    month = this.datenow.getMinutes();
 
   constructor(
     public navCtrl: NavController,
@@ -45,7 +47,7 @@ export class HomePage extends BasePage{
 
   ionViewDidLoad() {
     this.uid = this.firebaseAuth.auth.currentUser.uid;
-
+    
     this.firebaseFirestore
     .collection('question')
     .snapshotChanges()
@@ -62,9 +64,12 @@ export class HomePage extends BasePage{
         })
         console.log(this.items);
         console.log(this.items.data);
+        console.log(this.month);
       });
 
     })
+
+    
 
   }
 
@@ -153,7 +158,7 @@ export class HomePage extends BasePage{
     }
     //console.log(this.total_score);
     const popover = this.popoverCtrl.create(ResultPage,{ 
-      test_score: this.total_score,
+      Tscore: this.total_score,
       Htext: this.head_text,
       Ntext: this.text
      });
