@@ -29,7 +29,6 @@ export class PlanPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PlanPage');
     this.uid = this.firebaseAuth.auth.currentUser.uid;
     
     this.firebaseFirestore
@@ -43,11 +42,20 @@ export class PlanPage {
         this.items.push({
           id : action.payload.doc.id,
           data : action.payload.doc.data(),
+          model : null,
+          score : null,
         })
+        // console.log(this.items);
         console.log(this.items);
+        // console.log(this.items.data['no']);
       });
 
     })
+    
+  }
+
+  showDescript(value){
+    console.log(value);
   }
 
 }
