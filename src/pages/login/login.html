@@ -8,53 +8,56 @@
 
 
 <ion-content padding class="bg">
-  <div class="row-one">
-      <div class="text"><p>STOP TOGETHER</p></div>
-  </div>
-  <div class="row-two">
-    <div class="img">
-        <img src="https://cdn.icon-icons.com/icons2/516/PNG/512/stop_smoking_icon-icons.com_51088.png">
-    </div>
-  </div>
-  <div class="row-three">
-      <div class="text"><p>Sign in</p></div>
-  </div>
-  <ion-list>
-
-    <ion-item>
-      <!-- <ion-label placeholder="Email">Email</ion-label> -->
-      <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <!-- <ion-label placeholder="Password">Password</ion-label> -->
-      <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-
-  </ion-list>
-
-    <button ion-button full (click)="loginNormal()" class="login-but">Login</button>
-    <button ion-button full clear (click)="navigateRegister()" class="regis-but">Register</button>
-
-    <div *ngIf="isLoggedIn; else facebookLogin">
-        <h2>Hi, {{users.name}} ({{users.email}})</h2>
-        <p>
-          Gender: {{users.gender}}
-        </p>
-        <p>
-          <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
-        </p>
-        <p>
-          <button ion-button icon-right (click)="logout()">
-            Logout
-          </button>
-        </p>
+  <div class="page-container">
+      <div class="row-one">
+          <div class="text"><p>STOP TOGETHER</p></div>
       </div>
-   
-    <ng-template #facebookLogin>
-      <button ion-button full (click)="login()" class="fb-but">
-        <ion-icon name="logo-facebook"></ion-icon>&nbsp;
-        Login with Facebook
-      </button>
-    </ng-template>
+      <div class="row-two">
+        <div class="img">
+            <img src="https://cdn.icon-icons.com/icons2/516/PNG/512/stop_smoking_icon-icons.com_51088.png">
+        </div>
+      </div>
+      <div class="row-three">
+          <div class="text"><p>Sign in</p></div>
+      </div>
+      <ion-list>
+    
+        <ion-item>
+          <!-- <ion-label placeholder="Email">Email</ion-label> -->
+          <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <!-- <ion-label placeholder="Password">Password</ion-label> -->
+          <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+    
+      </ion-list>
+    
+        <button ion-button full (click)="loginNormal()" class="login-but">Login</button>
+        <button ion-button full clear (click)="navigateRegister()" class="regis-but">Register</button>
+    
+        <div *ngIf="isLoggedIn; else facebookLogin">
+            <h2>Hi, {{users.name}} ({{users.email}})</h2>
+            <p>
+              Gender: {{users.gender}}
+            </p>
+            <p>
+              <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+            </p>
+            <p>
+              <button ion-button icon-right (click)="logout()">
+                Logout
+              </button>
+            </p>
+          </div>
+       
+        <ng-template #facebookLogin>
+          <button ion-button full (click)="login()" class="fb-but">
+            <ion-icon name="logo-facebook"></ion-icon>&nbsp;
+            Login with Facebook
+          </button>
+        </ng-template>
+  </div>
+  
 </ion-content>

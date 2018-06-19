@@ -1,6 +1,4 @@
-import { AddEventPage } from './../pages/add-event/add-event';
-
-import { CalendarPage } from './../pages/calendar/calendar';
+import { PlanPage } from './../pages/plan/plan';
 import { SendSuccessPage } from './../pages/send-success/send-success';
 import { RegisterPage } from './../pages/register/register';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +22,6 @@ import { AddMoviePage } from '../pages/add-movie/add-movie';
 
 import { Facebook } from '@ionic-native/facebook';
 import * as firebase from 'firebase';
-import { Calendar } from '@ionic-native/calendar';
 
 
 export const config = {
@@ -49,8 +46,7 @@ firebase.initializeApp(config)
     AddMoviePage,
     SendSuccessPage,
     ResultPage,
-    CalendarPage,
-    AddEventPage
+    PlanPage
   ],
   imports: [
     BrowserModule,
@@ -73,15 +69,13 @@ firebase.initializeApp(config)
     AddMoviePage,
     SendSuccessPage,
     ResultPage,
-    CalendarPage,
-    AddEventPage
+    PlanPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Facebook,
-    Calendar
     //firebase
   ],
 })

@@ -1,4 +1,4 @@
-import { CalendarPage } from './../calendar/calendar';
+import { PlanPage } from './../plan/plan';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -12,7 +12,7 @@ export class TabPage {
 
   homePage = HomePage;
   profilePage = ProfilePage;
-  calendarPage = CalendarPage;
+  planPage = PlanPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

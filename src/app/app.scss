@@ -50,6 +50,10 @@
     /* 2 */
 }
 
+ion-app.md [padding] .scroll-content {
+    padding: 0px;
+}
+
 
 /* Sections
      ========================================================================== */
@@ -78,6 +82,7 @@ section {
 }
 
 
+
 /**
    * Correct the font size and margin on `h1` elements within `section` and
    * `article` contexts in Chrome, Firefox, and Safari.
@@ -101,6 +106,11 @@ h1 {
 *{
     font-family: Itim;
 }
+
+button{
+    font-family: Itim;
+}
+
 
 
 /* Grouping content

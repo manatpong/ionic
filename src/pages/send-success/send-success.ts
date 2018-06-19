@@ -1,4 +1,4 @@
-import { CalendarPage } from './../calendar/calendar';
+import { AddMoviePage } from './../add-movie/add-movie';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -27,7 +27,7 @@ export class SendSuccessPage {
   }
 
   navigateCalendar() {
-    this.navCtrl.push(CalendarPage);
+    this.navCtrl.push(AddMoviePage);
   }
 
   score = this.navParams.get('test_score');

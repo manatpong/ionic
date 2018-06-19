@@ -1,4 +1,3 @@
-import { CalendarPage } from './../calendar/calendar';
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { Component } from '@angular/core';

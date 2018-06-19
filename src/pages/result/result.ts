@@ -1,4 +1,4 @@
-import { CalendarPage } from './../calendar/calendar';
+import { PlanPage } from './../plan/plan';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -31,7 +31,7 @@ export class ResultPage {
   }
 
   navigateCalender() {
-    this.navCtrl.push(CalendarPage);
+    this.navCtrl.push(PlanPage);
   }
 
   
