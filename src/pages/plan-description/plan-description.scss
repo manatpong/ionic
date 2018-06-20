@@ -4,7 +4,7 @@ page-plan-description {
         flex-direction: row;
         width: 100%;
         height: 6%;
-        background: rgb(206, 0, 0);
+        background: rgb(255, 46, 92);
         .head-text {
             width: 90%;
             height: 100%;
@@ -16,15 +16,110 @@ page-plan-description {
         width: 100%;
         height: 86%;
         background: darkcyan;
+        align-items: center;
+        justify-content: center;
+        .inner-container {
+           // display: flex;
+            width: 90%;
+            height: 90%;
+            .day-text {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 5%;
+                background: darkgoldenrod;
+                align-items: center;
+                .text {
+                    font-size: 20px;
+                    font-weight: 1000;
+                    color: #fff;
+                }
+            }
+            .descript-container {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 75%;
+                align-items: center;
+                justify-content: center;
+                .canvas {
+                    width: 100%;
+                    height: 90%;
+                    background: #fff;
+                }
+            }
+            .button-container {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 20%;
+                background: darkgoldenrod; 
+                .back-container {
+                    display: flex;
+                    flex-direction: column;
+                    width: 20%;
+                    height: 100%;
+                    justify-content: center;
+                    .button-back {
+                        border-radius: 30px;
+                        width: 60px;
+                        height: 60px;
+                        font-size: 34px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        background: rgb(14, 134, 14);
+                        .arrow-back {
+                            font-weight: 1000;
+                        }
+                    }
+                    .button-back:hover,:active {
+                        font-size: 34px;
+                    }
+                }
+                .img-container {
+                    display:flex;
+                    flex-direction: column;
+                    margin: auto;
+                    width: 70%;
+                    height: 100%;
+                    align-items: center;
+                    .img {
+                        width: 80px;
+                        height: 80px;
+                        margin: 0px;
+                    }
+                }
+                .forward-container {
+                    display: flex;
+                    flex-direction: column;
+                    width: 20%;
+                    height: 100%;
+                    justify-content: center;
+                    .button-forward {
+                        border-radius: 30px;
+                        width: 60px;
+                        height: 60px;
+                        font-size: 34px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        background: rgb(14, 134, 14);
+                        .arrow-forward {
+                            font-weight: 1000;
+                        }
+                    }
+                    .button-forward:hover,:active {
+                        font-size: 34px;
+                    }
+                }               
+            }
+        }
+        
     }
     .footer-container {
         display: flex;
         flex-direction: row;
         width: 100%;
         height: 8%;
-        background: rgb(206, 0, 0);
-    }
-    .bg div{
-        background: red;
+        background: rgb(255, 46, 92);
     }
 }
