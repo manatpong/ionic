@@ -3,11 +3,19 @@ page-plan-description {
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 6%;
-        background: rgb(255, 46, 92);
+        height: 8%;
+        background: rgba(255, 36, 47, 0.877);
+        align-items: center;
+        justify-content: center;
         .head-text {
             width: 90%;
             height: 100%;
+            color: rgb(49, 49, 49);
+            font-weight: 1000;
+            font-size: 25px;
+            .text {
+                margin-top: 10px;
+            }
         }
     }
     .body-container {
@@ -27,7 +35,6 @@ page-plan-description {
                 flex-direction: row;
                 width: 100%;
                 height: 5%;
-                background: darkgoldenrod;
                 align-items: center;
                 .text {
                     font-size: 20px;
@@ -45,7 +52,18 @@ page-plan-description {
                 .canvas {
                     width: 100%;
                     height: 90%;
-                    background: #fff;
+                    background: rgb(231, 235, 175);
+                    border-radius: 10px;
+                    align-items: center;
+                    justify-content: center;
+                    .text {
+                        width: 85%;
+                        height: 85%;
+                        font-size: 18px;
+                        margin: auto;
+                        margin-top: 15px;
+                        color: rgb(51, 51, 51);
+                    }
                 }
             }
             .button-container {
@@ -53,7 +71,6 @@ page-plan-description {
                 flex-direction: row;
                 width: 100%;
                 height: 20%;
-                background: darkgoldenrod; 
                 .back-container {
                     display: flex;
                     flex-direction: column;
@@ -61,13 +78,13 @@ page-plan-description {
                     height: 100%;
                     justify-content: center;
                     .button-back {
-                        border-radius: 30px;
-                        width: 60px;
-                        height: 60px;
-                        font-size: 34px;
+                        border-radius: 25px;
+                        width: 50px;
+                        height: 50px;
+                        font-size: 28px;
                         padding-left: 0px;
                         padding-right: 0px;
-                        background: rgb(14, 134, 14);
+                        background: rgb(10, 117, 63);
                         .arrow-back {
                             font-weight: 1000;
                         }
@@ -96,13 +113,13 @@ page-plan-description {
                     height: 100%;
                     justify-content: center;
                     .button-forward {
-                        border-radius: 30px;
-                        width: 60px;
-                        height: 60px;
-                        font-size: 34px;
+                        border-radius: 25px;
+                        width: 50px;
+                        height: 50px;
+                        font-size: 28px;
                         padding-left: 0px;
                         padding-right: 0px;
-                        background: rgb(14, 134, 14);
+                        background: rgb(10, 117, 63);
                         .arrow-forward {
                             font-weight: 1000;
                         }
@@ -119,7 +136,7 @@ page-plan-description {
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 8%;
-        background: rgb(255, 46, 92);
+        height: 6%;
+        background: rgba(255, 36, 47, 0.877);
     }
 }

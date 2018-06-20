@@ -29,6 +29,7 @@ export class HomePage extends BasePage{
   test_score: number;
   head_text: string = '';
   text: string = '';
+  level: number;
   datenow = new Date();
     month = this.datenow.getMinutes();
 
@@ -77,7 +78,15 @@ export class HomePage extends BasePage{
     // console.log(this.items[0].model.value);
     // this.test = 1+1;
     //this.navCtrl.push(CalendarPage);
-    const popover = this.popoverCtrl.create(ResultPage,{test_score: 10});
+    this.head_text = 'ยินดีด้วย !!';
+    this.text = 'คุณไม่ติด Nicotine';
+    this.level = 0;
+    const popover = this.popoverCtrl.create(ResultPage,{ 
+      Tscore: 10,
+      Htext: this.head_text,
+      Ntext: this.text,
+      lv: this.level
+     });
     popover.present();
     
   }
@@ -145,21 +154,25 @@ export class HomePage extends BasePage{
     if( this.total_score >= 0 ) {
       this.head_text = 'ยินดีด้วย !!';
       this.text = 'คุณไม่ติด Nicotine';
+      this.level = 0;
       
     }
     else if ( this.total_score >= 4) {
       this.head_text = 'พยายามเข้า !!';
       this.text = 'คุณติด Nicotine ระดับปานกลาง';
+      this.level = 1;
     }
     else {
       this.head_text = 'น่าเสียใจ !!';
       this.text = 'คุณติด Nicotine ระดับสูง';
+      this.level = 2;
     }
     //console.log(this.total_score);
     const popover = this.popoverCtrl.create(ResultPage,{ 
       Tscore: this.total_score,
       Htext: this.head_text,
-      Ntext: this.text
+      Ntext: this.text,
+      lv: this.level
      });
     popover.present();
 

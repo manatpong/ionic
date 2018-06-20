@@ -7,6 +7,7 @@ import { LoadingController } from 'ionic-angular/components/loading/loading-cont
 import { Loading } from 'ionic-angular/components/loading/loading';
 import BasePage from '../base';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the RegisterPage page.
@@ -82,6 +83,10 @@ export class RegisterPage extends BasePage{
       this.hideLoading();
       this.showToast(error.message);
     })
+  }
+
+  backTo() {
+    this.navCtrl.push(LoginPage);
   }
 
   // showToast(msg){

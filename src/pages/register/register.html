@@ -12,41 +12,53 @@
 
 
 <ion-content padding class="bg">
-    <ion-navbar class="nav-back">
-        
-    </ion-navbar>
-    <div class="row-one">
-        <div class="text"><p>STOP TOGETHER</p></div>
+  <div class="head-container">
+    <div class="nav-bar">
+      <button ion-button class="nav-back">
+        <ion-icon name="ios-arrow-back" class="ios-arrow-back" (click)="backTo()"></ion-icon>
+      </button>
     </div>
-    <div class="row-two">
-      <div class="img">
-        <img src="https://png.icons8.com/office/160/add-user-male.png">
+    <div class="head-text">
+      <div class="text">
+        <p>STOP TOGETHER</p>
       </div>
     </div>
+  </div>
+    
+  <div class="page-container">
+      <div class="row-two">
+          <div class="img">
+            <img src="https://png.icons8.com/office/160/add-user-male.png">
+          </div>
+        </div>
     <div class="row-three">
-        <div class="text"><p>Sign Up</p></div>
+      <div class="text">
+        <p>Sign Up</p>
+      </div>
     </div>
-  <ion-list>
-    <ion-item>
-      <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
-    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input placeholder="Name" type="text" [(ngModel)]="displayName"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input placeholder="Name" type="text" [(ngModel)]="displayName"></ion-input>
+      </ion-item>
 
-    <ion-item>
+      <ion-item>
         <ion-input placeholder="Age" type="number" [(ngModel)]="age"></ion-input>
       </ion-item>
 
-    <ion-item>
+      <ion-item>
         <ion-input placeholder="Telephone" type="text" [(ngModel)]="tel"></ion-input>
-      </ion-item> 
-  </ion-list>
+      </ion-item>
+    </ion-list>
 
-  <button ion-button full (click)="register()" class="regis-but">Register</button>
+    <button ion-button full (click)="register()" class="regis-but">Register</button>
+
+  </div>
 </ion-content>

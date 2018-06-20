@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { PlanDescriptionPage } from './../plan-description/plan-description';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -58,6 +59,10 @@ export class PlanPage {
   showDescript(value){
     console.log(value);
     this.navCtrl.push(PlanDescriptionPage,{'day': value});
+  }
+
+  backTo(){
+    this.navCtrl.push(HomePage);
   }
 
 }

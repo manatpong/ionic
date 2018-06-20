@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { ProfilePage } from './../profile/profile';
 import { FirebaseAuth, FacebookAuthProvider } from '@firebase/auth-types';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
@@ -104,6 +105,7 @@ export class LoginPage extends BasePage {
     .signInAndRetrieveDataWithEmailAndPassword(this.email, this.password)
     .then((user) => {
       this.hideLoading()
+      this.navCtrl.push(HomePage);
       //this.showToast('Login Success');
 
     })

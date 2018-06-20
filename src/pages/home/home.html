@@ -1,25 +1,20 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      แบบสอบถาม
+  <ion-navbar class="nav-bar">
+    <ion-title >
+      <div class="text">แบบสอบถาม</div>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg">
-  <!-- <div class="page-container"> -->
-     <!-- <ion-list>
-        <ion-item *ngFor="let movie of items">
-          
-        </ion-item>
-    </ion-list> -->
-    <div *ngFor="let question of items" >
-      
+  <div class="page-container">
+    <div *ngFor="let question of items">
+
       <ion-list class="list-item" radio-group [(ngModel)]="question.model">
         <ion-list-header class="list-head">
-            {{question.data.no}}. {{ question.data.name }}
+          {{question.data.no}}. {{ question.data.name }}
         </ion-list-header>
-      
+
         <div>
           <ion-item (click)="onClick()">
             <ion-label class="fontt">{{ question.data.choice_one }}</ion-label>
@@ -27,10 +22,10 @@
             <ion-radio name="one" value="1"></ion-radio>
           </ion-item>
         </div>
-      
+
         <div>
           <ion-item>
-            <ion-label class="text">{{ question.data.choice_two }}</ion-label>
+            <ion-label class="fontt">{{ question.data.choice_two }}</ion-label>
             <!-- <ion-radio [(ngModel)]="choice" value="2"></ion-radio> -->
             <ion-radio name="two" value="2"></ion-radio>
           </ion-item>
@@ -38,25 +33,25 @@
 
         <div *ngIf="question.data.choice_three">
           <ion-item>
-            <ion-label class="text">{{ question.data.choice_three }}</ion-label>
+            <ion-label class="fontt">{{ question.data.choice_three }}</ion-label>
             <!-- <ion-radio [(ngModel)]="choice" value="3"></ion-radio> -->
             <ion-radio name="three" value="3"></ion-radio>
           </ion-item>
         </div>
-        
+
         <div *ngIf="question.data.choice_four">
           <ion-item>
-            <ion-label class="text">{{ question.data.choice_four }}</ion-label>
+            <ion-label class="fontt">{{ question.data.choice_four }}</ion-label>
             <!-- <ion-radio [(ngModel)]="choice" value="4"></ion-radio> -->
             <ion-radio name="four" value="4"></ion-radio>
           </ion-item>
         </div>
       </ion-list>
-      </div>
+    </div>
 
-    
-      <button class="butt" ion-button full round (click)="posting_data()">ส่งข้อมูล</button>
-      <button ion-button full (click)="onClick()">Test</button>
-  <!-- </div> -->
-   
+
+    <button class="butt" ion-button full round (click)="posting_data()">ส่งข้อมูล</button>
+    <button ion-button full (click)="onClick()">Test</button>
+  </div>
+
 </ion-content>

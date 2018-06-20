@@ -22,25 +22,27 @@
   <div class="body-container">
     <div class="inner-container">
       <div class="day-text">
-        <div class="text">Day 1</div>
+        <div class="text">Day {{ selectDay.day }}</div>
       </div>
       <div class="descript-container">
-        <div class="canvas"></div>
+        <div class="canvas">
+          <div class="text">คำอธิบาย</div>
+        </div>
       </div>
       <div class="button-container">
         <div class="back-container">
-          <button ion-button class="button-back">
+          <button ion-button class="button-back" (click)="backTo()">
             <ion-icon name="arrow-back" class="arrow-back"></ion-icon>
           </button>
         </div>
         <div class="img-container">
           <div class="img">
-            <!-- <img src="../../assets/imgs/picture.png"> -->
-            <img src="http://images.all-free-download.com/images/graphiclarge/harry_potter_icon_6825007.jpg">
+            <img src="../../assets/imgs/picture.png">
+            <!-- <img src="http://images.all-free-download.com/images/graphiclarge/harry_potter_icon_6825007.jpg"> -->
           </div>
         </div>
         <div class="forward-container">
-          <button ion-button class="button-forward">
+          <button ion-button class="button-forward" (click)="nextPage()">
             <ion-icon name="arrow-forward" class="arrow-forward"></ion-icon>
           </button>
         </div>

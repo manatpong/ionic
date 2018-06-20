@@ -3,61 +3,100 @@ page-register {
     .bg{
         background-color: darkcyan;
     }
-    .regis-but{
-       // color: rgb(138, 88, 44);
-       color: #ffff;
-        background-color: rgb(138, 88, 44);
-        font-size: 30px;
-        font-weight: 600;
-        height: 45px;
-    }
-    .regis-but:hover{
-        font-size: 34px;
-    }
-    .regis-but:active{
-        background-color: rgb(138, 88, 44);
-    }
-    .row-two{
+    .head-container {
         display: flex;
-        flex-direction: row;
-        height: 15%;
-        widows: 100%;
-        .img{
-            margin:auto;
-            img{
-                width: 80px;
+        width: 100%;
+        height: 10%;
+        margin-top: 5%;
+        align-content: center;
+        .nav-bar {
+            display: flex;
+            flex-direction: column;
+            width: 15%;
+            height: 100%;
+            justify-content: center;
+            .nav-back {
+                color: rgb(44, 44, 44);
+                background: none;
+                font-weight: 1000;
+                font-size: 20px;
+                border-radius: 15px;
             }
         }
-    }
-    .row-three{
-        display: flex;
-        flex-direction: row;
-        height: 50px;
-        text-align: center;
-            .text p{
-                font-weight: bold;
-                font-size: 25px;
-                color: sandybrown;
-            }
-            .text {
-                margin: auto;
-            }
-        }
-    .nav-back div{
-        background: darkcyan;
-    }
-    .row-one{
-        display: flex;
-        flex-direction: row;
-        height: 50px;
-            .text p{
+        .head-text {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 100%;
+            align-content: center;
+            justify-content: center;
+            .text p {
                 font-weight: 900;
                 font-size: 30px;
                 color: rgb(104, 48, 9);
-                
-            }
-            .text {
-                margin:auto;
             }
         }
+    }
+    .page-container {
+        padding: 16px;
+        
+        .regis-but{
+            // color: rgb(138, 88, 44);
+            color: #ffff;
+             background-color: rgb(138, 88, 44);
+             font-size: 25px;
+             font-weight: 600;
+             height: 45px;
+         }
+         .regis-but:hover{
+             font-size: 30px;
+         }
+         .regis-but:active{
+             background-color: rgb(138, 88, 44);
+             font-size: 30px;
+         }
+            .row-two{
+                height: 10%;
+                .img{
+                    width: 70px;
+                    margin:auto;
+                    img{
+                        width: 70px;
+                    }
+                }
+            }
+         
+         .row-three{
+             display: flex;
+             flex-direction: row;
+             height: 50px;
+             text-align: center;
+                 .text p{
+                     font-weight: bold;
+                     font-size: 25px;
+                     color: sandybrown;
+                 }
+                 .text {
+                     margin: auto;
+                 }
+             }
+         .nav-back div{
+             background: darkcyan;
+         }
+         .row-one{
+             display: flex;
+             flex-direction: row;
+             height: 50px;
+                 .text p{
+                     font-weight: 900;
+                     font-size: 30px;
+                     color: rgb(104, 48, 9);
+                     
+                 }
+                 .text {
+                     margin:auto;
+                 }
+             }
+    }
+    
 }
