@@ -1,9 +1,7 @@
 <!-- <ion-header>
-
   <ion-navbar>
     <ion-title>Login</ion-title>
   </ion-navbar>
-
 </ion-header> -->
 
 
@@ -11,36 +9,148 @@
   <div class="body-container">
     <div class="inbody-container">
       <div class="row-one">
-        <div class="text-howto">HOW TO</div>
-        <div class="text-stop">STOP</div>
-        <div class="img">
+        <div class="row-one-container">
+          <div class="text-howto">HOW TO</div>
+          <div class="text-stop">&nbsp;STOP</div>
+          <div class="img">
             <img src="https://cdn.icon-icons.com/icons2/516/PNG/512/stop_smoking_icon-icons.com_51088.png">
+          </div>
         </div>
       </div>
       <div class="day-container">
         <div class="text-day">
-            Day
+          Day
         </div>
         <div class="all-day">
           <div class="row-day">
-             <div class="a-day"><div class="text">1</div></div>
-             <div class="a-day"><div class="text">2</div></div>
-             <div class="a-day"><div class="text">3</div></div>
-             <div class="a-day"><div class="text">4</div></div>
-             <div class="a-day"><div class="text">5</div></div>
+            <div class="a-day" (click)="showDescript(1)">
+              <div class="text">1</div>
+            </div>
+            <div class="a-day" (click)="showDescript(2)">
+              <div class="text">2</div>
+            </div>
+            <div class="a-day" (click)="showDescript(3)">
+              <div class="text">3</div>
+            </div>
+            <div class="a-day" (click)="showDescript(4)">
+              <div class="text">4</div>
+            </div>
+            <div class="a-day" (click)="showDescript(5)">
+              <div class="text">5</div>
+            </div>
           </div>
           <div class="row-day">
-              <div class="a-day"><div class="text">6</div></div>
-              <div class="a-day"><div class="text">7</div></div>
-              <div class="a-day"><div class="text">8</div></div>
-              <div class="a-day"><div class="text">9</div></div>
-              <div class="a-day"><div class="text">10</div></div>
-           </div>
+            <div class="a-day" (click)="showDescript(6)">
+              <div class="text">6</div>
+            </div>
+            <div class="a-day" (click)="showDescript(7)">
+              <div class="text">7</div>
+            </div>
+            <div class="a-day" (click)="showDescript(8)">
+              <div class="text">8</div>
+            </div>
+            <div class="a-day" (click)="showDescript(9)">
+              <div class="text">9</div>
+            </div>
+            <div class="a-day" (click)="showDescript(10)">
+              <div class="text">10</div>
+            </div>
+          </div>
+          <div class="row-day">
+            <div class="a-day" (click)="showDescript(11)">
+              <div class="text">11</div>
+            </div>
+            <div class="a-day" (click)="showDescript(12)">
+              <div class="text">12</div>
+            </div>
+            <div class="a-day" (click)="showDescript(13)">
+              <div class="text">13</div>
+            </div>
+            <div class="a-day" (click)="showDescript(14)">
+              <div class="text">14</div>
+            </div>
+            <div class="a-day" (click)="showDescript(15)">
+              <div class="text">15</div>
+            </div>
+          </div>
+          <div class="row-day">
+            <div class="a-day" (click)="showDescript(16)">
+              <div class="text">16</div>
+            </div>
+            <div class="a-day" (click)="showDescript(17)">
+              <div class="text">17</div>
+            </div>
+            <div class="a-day" (click)="showDescript(18)">
+              <div class="text">18</div>
+            </div>
+            <div class="a-day" (click)="showDescript(19)">
+              <div class="text">19</div>
+            </div>
+            <div class="a-day" (click)="showDescript(20)">
+              <div class="text">20</div>
+            </div>
+          </div>
+          <div class="row-day">
+            <div class="a-day" (click)="showDescript(21)">
+              <div class="text">21</div>
+            </div>
+            <div class="a-day" (click)="showDescript(22)">
+              <div class="text">22</div>
+            </div>
+            <div class="a-day" (click)="showDescript(23)">
+              <div class="text">23</div>
+            </div>
+            <div class="a-day" (click)="showDescript(24)">
+              <div class="text">24</div>
+            </div>
+            <div class="a-day" (click)="showDescript(25)">
+              <div class="text">25</div>
+            </div>
+          </div>
+          <div class="row-day">
+            <div class="a-day" (click)="showDescript(26)">
+              <div class="text">26</div>
+            </div>
+            <div class="a-day" (click)="showDescript(27)">
+              <div class="text">27</div>
+            </div>
+            <div class="a-day" (click)="showDescript(28)">
+              <div class="text">28</div>
+            </div>
+            <div class="a-day" (click)="showDescript(29)">
+              <div class="text">29</div>
+            </div>
+            <div class="a-day" (click)="showDescript(30)">
+              <div class="text">30</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="success-container">
+        <div class="text-success">
+          SUCCESS !!
         </div>
       </div>
     </div>
   </div>
   <div class="foot-container">
-
+    <div class="inner-container">
+      <div class="back-container">
+        <button ion-button class="button-back">
+          <ion-icon name="arrow-back" class="arrow-back"></ion-icon>
+        </button>
+      </div>
+      <div class="img-container">
+        <div class="img">
+          <!-- <img src="../../assets/imgs/picture.png"> -->
+          <img src="http://images.all-free-download.com/images/graphiclarge/harry_potter_icon_6825007.jpg">
+        </div>
+      </div>
+      <div class="forward-container">
+        <button ion-button class="button-forward">
+          <ion-icon name="arrow-forward" class="arrow-forward"></ion-icon>
+        </button>
+      </div>
+    </div>
   </div>
 </ion-content>

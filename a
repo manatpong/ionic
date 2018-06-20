@@ -1,0 +1,63 @@
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex 1f6c490..24a383a 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -2187,7 +2187,8 @@[m
+         },[m
+         "ansi-regex": {[m
+           "version": "2.1.1",[m
+[31m-          "bundled": true[m
+[32m+[m[32m          "bundled": true,[m
+[32m+[m[32m          "optional": true[m
+         },[m
+         "aproba": {[m
+           "version": "1.1.1",[m
+[36m@@ -2251,6 +2252,7 @@[m
+         "boom": {[m
+           "version": "2.10.1",[m
+           "bundled": true,[m
+[32m+[m[32m          "optional": true,[m
+           "requires": {[m
+             "hoek": "2.16.3"[m
+           }[m
+[36m@@ -2396,6 +2398,7 @@[m
+         "fstream": {[m
+           "version": "1.0.11",[m
+           "bundled": true,[m
+[32m+[m[32m          "optional": true,[m
+           "requires": {[m
+             "graceful-fs": "4.1.11",[m
+             "inherits": "2.0.3",[m
+[36m@@ -2457,7 +2460,8 @@[m
+         },[m
+         "graceful-fs": {[m
+           "version": "4.1.11",[m
+[31m-          "bundled": true[m
+[32m+[m[32m          "bundled": true,[m
+[32m+[m[32m          "optional": true[m
+         },[m
+         "har-schema": {[m
+           "version": "1.0.5",[m
+[36m@@ -2619,11 +2623,13 @@[m
+         },[m
+         "minimist": {[m
+           "version": "0.0.8",[m
+[31m-          "bundled": true[m
+[32m+[m[32m          "bundled": true,[m
+[32m+[m[32m          "optional": true[m
+         },[m
+         "mkdirp": {[m
+           "version": "0.5.1",[m
+           "bundled": true,[m
+[32m+[m[32m          "optional": true,[m
+           "requires": {[m
+             "minimist": "0.0.8"[m
+           }[m
+[36m@@ -2881,6 +2887,7 @@[m
+         "strip-ansi": {[m
+           "version": "3.0.1",[m
+           "bundled": true,[m
+[32m+[m[32m          "optional": true,[m
+           "requires": {[m
+             "ansi-regex": "2.1.1"[m
+           }[m

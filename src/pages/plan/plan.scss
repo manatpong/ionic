@@ -24,29 +24,34 @@ page-plan {
                 height: 15%;
                 color: #fff;
                 margin: auto;
-               .text-howto {
-                    display:flex;
-                    flex-direction: column;
-                    font-weight: 900;
-                    font-size: 2em;
-                    width: 40%;
-                }
-                .text-stop {
-                    display:flex;
-                    flex-direction: column;
-                    width: auto;
-                    color: rgb(221, 0, 0);
-                    font-weight: 900;
-                    font-size: 2.7em;
-                }
-                .img {
-                    display:flex;
-                    flex-direction: column;
-                    width: 30%;
-                    img {
-                        width: 5em;
-                        height: 5em;
-                        margin: auto;
+                .row-one-container {
+                    display: flex;
+                    margin: auto;
+                    justify-content: center;
+                    .text-howto {
+                        display:flex;
+                        flex-direction: column;
+                        font-weight: 900;
+                        font-size: 2em;
+                    }
+                    .text-stop {
+                        display:flex;
+                        flex-direction: column;
+                        width: auto;
+                        color: rgb(221, 0, 0);
+                        font-weight: 900;
+                        font-size: 2.7em;
+                    }
+                    .img {
+                        display:flex;
+                        flex-direction: column;
+                        //width: 30%;
+                        img {
+                            width: 5em;
+                            height: 5em;
+                            margin: auto;
+                            margin: 0px;
+                        }
                     }
                 }
             }
@@ -54,7 +59,7 @@ page-plan {
                 display:flex;
                 flex-direction: row;
                 width: 90%;
-                height: 75%;
+                height: 60%;
                 margin: auto;
                 .text-day {
                     display: flex;
@@ -62,32 +67,61 @@ page-plan {
                     color: #fff;
                     width: 13%;
                     font-size: 1.4em;
+                    font-weight: 1000;
                 }
                 .all-day {
                     display: flex;
                     flex-direction: column;
+                    width: 70vw;
                     .row-day {
                         display: flex;
                         flex-direction: row;
                         width: 100%;
+                        height: 7vh;
                         margin-bottom: 4px;
                         .a-day {
                             background: rgb(66, 66, 66);
-                            width: 3em;
-                            height: 3em;
+                            width: 20%;
+                            height: auto;
                             color: #fff;
                             padding: 0.5em;
                             text-align: center;
-                            border-radius: 0.75em;
+                            border-radius: 0.9em;
                             margin-left: 4px;
                             .text{
                                 margin: auto;
-                                font-size: 1.5em;
+                                font-size: 1.6em;
                                 font-weight: 600;
                                 // padding-top: 4px;
                             }
+                            
                         }
+                        .a-day:hover{
+                            .text{
+                                font-size: 1.7em;
+                            }
+                            
+                         }
+                         .a-day:active{
+                            .text{
+                                font-size: 1.7em;
+                            }
+                          }
                     }
+                }
+                
+            }
+            .success-container {
+                display:flex;
+                flex-direction: row;
+                width: 95%;
+                height: 10%;
+                .text-success {
+                    width: 100%;
+                    text-align: right;
+                    color: #fff;
+                    font-weight: 1000;
+                    font-size: 1.4em;
                 }
             }
         }
@@ -98,6 +132,71 @@ page-plan {
         width: 100%;
         height: 20%;
         background-color: rgb(1, 165, 165);
+        justify-content: center;
+        align-items: center;
+        .inner-container {
+            display: flex;
+            width: 90%;
+            height: 80%;
+            .back-container {
+                display: flex;
+                flex-direction: column;
+                width: 15%;
+                height: 100%;
+                justify-content: center;
+                .button-back {
+                    border-radius: 25px;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 28px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    background: rgb(14, 134, 14);
+                    .arrow-back {
+                        font-weight: 1000;
+                    }
+                }
+                .button-back:hover,:active {
+                    font-size: 34px;
+                }
+            }
+            .img-container {
+                display:flex;
+                flex-direction: column;
+                margin: auto;
+                width: 70%;
+                height: 100%;
+                align-items: center;
+                .img {
+                    width: 80px;
+                    height: 80px;
+                    margin: 0px;
+                }
+            }
+            .forward-container {
+                display: flex;
+                flex-direction: column;
+                width: 15%;
+                height: 100%;
+                justify-content: center;
+                .button-forward {
+                    border-radius: 25px;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 28px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    background: rgb(14, 134, 14);
+                    .arrow-forward {
+                        font-weight: 1000;
+                    }
+                }
+                .button-forward:hover,:active {
+                    font-size: 34px;
+                }
+            }
+        }
+        
     }
     
 }

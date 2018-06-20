@@ -1,3 +1,4 @@
+import { PlanDescriptionPage } from './../pages/plan-description/plan-description';
 import { PlanPage } from './../pages/plan/plan';
 import { SendSuccessPage } from './../pages/send-success/send-success';
 import { RegisterPage } from './../pages/register/register';
@@ -46,7 +47,8 @@ firebase.initializeApp(config)
     AddMoviePage,
     SendSuccessPage,
     ResultPage,
-    PlanPage
+    PlanPage,
+    PlanDescriptionPage
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,8 @@ firebase.initializeApp(config)
     AddMoviePage,
     SendSuccessPage,
     ResultPage,
-    PlanPage
+    PlanPage,
+    PlanDescriptionPage
   ],
   providers: [
     StatusBar,
