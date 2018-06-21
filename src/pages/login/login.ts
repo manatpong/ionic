@@ -22,7 +22,7 @@ export class LoginPage extends BasePage {
   password = '';
   isLoggedIn:boolean = false;
   users: any;
-
+  
 
   constructor(
     public navCtrl: NavController,
@@ -30,54 +30,81 @@ export class LoginPage extends BasePage {
     public firebaseAuth: AngularFireAuth,
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
-    //public facebook: Facebook,
-    private fb: Facebook,
+    // private fb: Facebook,
+    public facebook: Facebook
   ) {
     super(toastCtrl,loadingCtrl)
-    fb.getLoginStatus()
-    .then(res => {
-      console.log(res.status);
-      if(res.status === "connect") {
-        this.isLoggedIn = true;
+    // fb.getLoginStatus()
+    // .then(res => {
+    //   console.log(res.status);
+    //   if(res.status === "connect") {
+    //     this.isLoggedIn = true;
         
-      } else {
-        this.isLoggedIn = false;
-      }
-    })
-    .catch(e => console.log(e));
+    //   } else {
+    //     this.isLoggedIn = false;
+    //   }
+    // })
+    // .catch(e => console.log(e));
 
   }
 
+  facebookLogin(): Promise<any> {
+    return this.facebook.login(['email'])
+      .then( response => {
+        const facebookCredential = firebase.auth.FacebookAuthProvider
+          .credential(response.authResponse.accessToken);
+  
+        firebase.auth().signInWithCredential(facebookCredential)
+          .then( success => { 
+            console.log("Firebase success: " + JSON.stringify(success)); 
+          });
+      }).catch((error) => { console.log(error) });  
+  }
+
+  
+
+  // facebookLogin(): Promise<any> {
+  //   return this.facebook.login(['email'])
+  //     .then( response => {
+  //       const facebookCredential = firebase.auth.FacebookAuthProvider
+  //         .credential(response.authResponse.accessToken);
+  
+  //       firebase.auth().signInWithCredential(facebookCredential)
+  //         .then( success => { 
+  //           console.log("Firebase success: " + JSON.stringify(success)); 
+  //         });
+  //     }).catch((error) => { console.log(error) });
+  // }
   //// FB start ////
-  login() {
-    this.fb.login(['public_profile', 'user_friends', 'email'])
-      .then(res => {
-        if(res.status === "connected") {
-          this.isLoggedIn = true;
-          this.getUserDetail(res.authResponse.userID);
-        } else {
-          this.isLoggedIn = false;
-        }
-      })
-      .catch(e => console.log('Error logging into Facebook', e));
-  }
-  userData = null;
+  // login() {
+  //   this.fb.login(['public_profile', 'user_friends', 'email'])
+  //     .then(res => {
+  //       if(res.status === "connected") {
+  //         this.isLoggedIn = true;
+  //         this.getUserDetail(res.authResponse.userID);
+  //       } else {
+  //         this.isLoggedIn = false;
+  //       }
+  //     })
+  //     .catch(e => console.log('Error logging into Facebook', e));
+  // }
+  // userData = null;
 
-  logout() {
-    this.fb.logout()
-      .then( res => this.isLoggedIn = false)
-      .catch(e => console.log('Error logout from Facebook', e));
-  }
-  getUserDetail(userid) {
-    this.fb.api("/"+userid+"/?fields=id,email,name,picture,gender",["public_profile"])
-      .then(res => {
-        console.log(res);
-        this.users = res;
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  }
+  // logout() {
+  //   this.fb.logout()
+  //     .then( res => this.isLoggedIn = false)
+  //     .catch(e => console.log('Error logout from Facebook', e));
+  // }
+  // getUserDetail(userid) {
+  //   this.fb.api("/"+userid+"/?fields=id,email,name,picture,gender",["public_profile"])
+  //     .then(res => {
+  //       console.log(res);
+  //       this.users = res;
+  //     })
+  //     .catch(e => {
+  //       console.log(e);
+  //     });
+  // }
   //// FB end ///
 
   // loginFB() {

@@ -37,7 +37,7 @@
         <button ion-button full (click)="loginNormal()" class="login-but">Login</button>
         <button ion-button full clear (click)="navigateRegister()" class="regis-but">Register</button>
     
-        <div *ngIf="isLoggedIn; else facebookLogin">
+        <!-- <div *ngIf="isLoggedIn; else facebookLogin">
             <h2>Hi, {{users.name}} ({{users.email}})</h2>
             <p>
               Gender: {{users.gender}}
@@ -50,14 +50,18 @@
                 Logout
               </button>
             </p>
-          </div>
+          </div> -->
        
-        <ng-template #facebookLogin>
-          <button ion-button full (click)="login()" class="fb-but">
+        <!-- <ng-template #facebookLogin>
+          <button ion-button full(click)="facebookLogin()" class="fb-but">
             <ion-icon name="logo-facebook"></ion-icon>&nbsp;
             Login with Facebook
           </button>
-        </ng-template>
+        </ng-template> -->
+        <button ion-button full (click)="facebookLogin()" class="fb-but">
+          <ion-icon name="logo-facebook"></ion-icon>&nbsp;
+          Login with Facebook
+        </button>
   </div>
   
 </ion-content>
