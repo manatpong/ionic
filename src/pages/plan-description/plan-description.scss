@@ -8,13 +8,35 @@ page-plan-description {
         align-items: center;
         justify-content: center;
         .head-text {
+            display: flex;
+            flex-direction: column;
             width: 90%;
             height: 100%;
             color: rgb(49, 49, 49);
             font-weight: 1000;
             font-size: 25px;
+            padding-left: 16px;
             .text {
                 margin-top: 10px;
+            }
+        }
+        
+        .close-container {
+            display: flex;
+            flex-direction: column;
+            width: 10%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            .close-button {
+                font-size: 25px;
+                font-weight: 600;
+                align-items: center;
+                justify-content: center;
+                margin-top: 5px;
+                .close-but {
+                    font-weight: 1000;
+                }
             }
         }
     }
@@ -101,7 +123,7 @@ page-plan-description {
                     height: 100%;
                     align-items: center;
                     .img {
-                        width: 80px;
+                        width: 58%;
                         height: 80px;
                         margin: 0px;
                     }

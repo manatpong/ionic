@@ -29,8 +29,14 @@ export class PlanDescriptionPage {
   selectDay = this.navParams.data;
   thisDay = this.navParams.get('day');
 
-  backTo() {
+  closePage() {
     this.navCtrl.push(PlanPage);
+  }
+
+  backTo() {
+    this.nextDay = this.thisDay - 1;
+    console.log(this.nextDay);
+    this.navCtrl.push(PlanDescriptionPage,{'day': this.nextDay});
   }
 
   nextPage() {
