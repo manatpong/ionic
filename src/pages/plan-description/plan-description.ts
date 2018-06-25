@@ -1,3 +1,5 @@
+import { NativePageTransitions, NativeTransitionOptions  } from '@ionic-native/native-page-transitions';
+import { HomePage } from './../home/home';
 import { PlanPage } from './../plan/plan';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -20,7 +22,11 @@ export class PlanDescriptionPage {
   btn_state2: boolean;
   btn_state1: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public nativePageTransitions: NativePageTransitions,
+  ) {
   }
 
   ionViewDidLoad() {
@@ -65,5 +71,44 @@ export class PlanDescriptionPage {
     
     this.navCtrl.push(PlanDescriptionPage,{'day': this.nextDay,'btn_forw': this.btn_state2, 'btn_back': true});
   }
+
+  swipePage(event) {
+    this.nextDay = this.thisDay + 1;
+    console.log(this.nextDay);
+    if(this.nextDay >= 30) {
+      this.btn_state2 = false;
+    }
+    else {
+      this.btn_state2 = true;
+    }
+    
+    // this.navCtrl.push(PlanDescriptionPage,{'day': this.nextDay,'btn_forw': this.btn_state2, 'btn_back': true});
+    if(event.direction === 2) {
+      let options: NativeTransitionOptions = {
+        direction: 'left',
+        duration: 400,
+        slowdownfactor: -1,
+        slidePixels: 40,
+        iosdelay: 100,
+        androiddelay: 50,
+        fixedPixelsTop: 0,
+        fixedPixelsBottom: 60
+       };
+    
+     this.nativePageTransitions.fade(options)
+      this.navCtrl.setRoot(PlanDescriptionPage,{'day': this.nextDay,'btn_forw': this.btn_state2, 'btn_back': true});
+      //this.navCtrl.push(HomePage);
+    }
+    else if(event.direction === 4) {
+      this.navCtrl.push(PlanPage);
+    }
+  }
+
+  ionViewWillLeave() {
+
+    
+   
+   }
+   
 
 }

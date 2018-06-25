@@ -21,6 +21,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AddMoviePage } from '../pages/add-movie/add-movie';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 import { Facebook } from '@ionic-native/facebook';
 import * as firebase from 'firebase';
@@ -82,6 +83,7 @@ firebase.initializeApp(config)
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Facebook,
+    NativePageTransitions
     //firebase
   ],
 })
