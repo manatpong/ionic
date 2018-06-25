@@ -1,3 +1,4 @@
+import { PopularQuestionPage } from './../popular-question/popular-question';
 import { HomePage } from './../home/home';
 import { PlanDescriptionPage } from './../plan-description/plan-description';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -58,11 +59,14 @@ export class PlanPage {
 
   showDescript(value){
     console.log(value);
-    this.navCtrl.push(PlanDescriptionPage,{'day': value});
+    this.navCtrl.push(PlanDescriptionPage,{'day': value,'btn_forw': true,'btn_back': true});
   }
 
   backTo(){
     this.navCtrl.push(HomePage);
   }
 
+  popQuestion() {
+    this.navCtrl.push(PopularQuestionPage);
+  }
 }

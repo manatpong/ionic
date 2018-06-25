@@ -1,3 +1,4 @@
+import { PopularQuestionPage } from './../pages/popular-question/popular-question';
 import { PlanDescriptionPage } from './../pages/plan-description/plan-description';
 import { PlanPage } from './../pages/plan/plan';
 import { SendSuccessPage } from './../pages/send-success/send-success';
@@ -48,7 +49,8 @@ firebase.initializeApp(config)
     SendSuccessPage,
     ResultPage,
     PlanPage,
-    PlanDescriptionPage
+    PlanDescriptionPage,
+    PopularQuestionPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ firebase.initializeApp(config)
     SendSuccessPage,
     ResultPage,
     PlanPage,
-    PlanDescriptionPage
+    PlanDescriptionPage,
+    PopularQuestionPage
   ],
   providers: [
     StatusBar,

@@ -116,12 +116,20 @@ page-plan {
                 flex-direction: row;
                 width: 95%;
                 height: 10%;
+                margin: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 0px;
                 .text-success {
                     width: 100%;
-                    text-align: right;
+                    text-align: center;
                     color: #fff;
                     font-weight: 1000;
-                    font-size: 1.4em;
+                    button {
+                        font-size: 1.6em;
+                        background: #04245d;
+                        border-radius: 25px;
+                    }
                 }
             }
         }
