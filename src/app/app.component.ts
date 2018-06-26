@@ -29,7 +29,7 @@ export class MyApp {
       .authState
       .subscribe((user) => { // ถ้าสภานะ user มีการ ปป.
         if(user){
-          this.rootPage = TabPage;
+          this.rootPage = HomePage;
         }else {
           this.rootPage = LoginPage;
         }
