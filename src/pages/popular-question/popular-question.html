@@ -15,25 +15,25 @@
 
 
 <ion-content padding class="bg">
-    <div class="header-container">
-        <div class="head-text">
-          <div class="text">คำถามที่พบบ่อย?</div>
-        </div>
-        <div class="close-container" (click)="closePage()">
-          <div class="close-button">
-            <ion-icon name="ios-close" class="close-but"></ion-icon>
-          </div>
-        </div>
+  <div class="header-container">
+    <div class="head-text">
+      <div class="text">คำถามที่พบบ่อย?</div>
+    </div>
+    <div class="close-container" (click)="closePage()">
+      <div class="close-button">
+        <ion-icon name="ios-close" class="close-but"></ion-icon>
       </div>
+    </div>
+  </div>
   <div class="page-container">
     <div class="inner-container">
       <div class="question-container">
         <div class="in-question">
           <div class="head-question">
-            <div class="text">คำถาม</div>
+            <div class="text">คำถามที่ {{ quest }}</div>
           </div>
           <div class="body-question">
-            <div class="text">Content</div>
+            <div class="text">{{ question }}</div>
           </div>
         </div>
       </div>
@@ -44,10 +44,24 @@
             <div class="text">คำตอบ</div>
           </div>
           <div class="body-answer">
-            <div class="text">This is content</div>
+            <div class="text">{{ answer }}</div>
           </div>
         </div>
 
+      </div>
+    </div>
+  </div>
+  <div class="foot-container">
+    <div class="btn-container">
+      <div class="back-btn">
+        <button *ngIf="state_back" ion-button class="button-back" (click)="backTo()">
+          <ion-icon name="arrow-back" class="arrow-back"></ion-icon>
+        </button>
+      </div>
+      <div class="forw-btn">
+        <button *ngIf="state_forw" ion-button class="button-forward" (click)="nextPage()">
+          <ion-icon name="arrow-forward" class="arrow-forward"></ion-icon>
+        </button>
       </div>
     </div>
   </div>

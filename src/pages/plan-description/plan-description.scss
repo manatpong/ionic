@@ -151,6 +151,24 @@ page-plan-description {
                     .button-forward:hover,:active {
                         font-size: 34px;
                     }
+                    .button-finish {
+                        border-radius: 25px;
+                        width: 50px;
+                        height: 50px;
+                        font-size: 28px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        //background: rgb(238, 0, 119);
+                        background-image: linear-gradient(rgb(251, 255, 0), orange);
+                        .arrow-forward {
+                            color: rgb(224, 0, 67);
+                            
+                            font-weight: 500;
+                    }
+                    .button-finish:hover,:active {
+                        font-size: 34px;
+                    }
+                    }
                 }               
             }
         }

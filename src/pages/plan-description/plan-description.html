@@ -55,6 +55,10 @@
           <button  *ngIf="state_forw" ion-button class="button-forward" (click)="nextPage()">
             <ion-icon name="arrow-forward" class="arrow-forward"></ion-icon>
           </button>
+          <button  *ngIf="finished" ion-button class="button-finish" (click)="finishPage()">
+            <ion-icon name="md-trophy" class="arrow-forward"></ion-icon>
+              
+            </button>
         </div>
       </div>
     </div>

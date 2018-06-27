@@ -1,3 +1,4 @@
+import { FinalQuestionairPage } from './../final-questionair/final-questionair';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 import { HomePage } from './../home/home';
 import { PlanPage } from './../plan/plan';
@@ -30,6 +31,7 @@ export class PlanDescriptionPage {
   text_mid: string = '';
   text_noon: string = '';
   data: any;
+  finish: boolean = false;
 
   constructor(
     public navCtrl: NavController,
@@ -51,6 +53,7 @@ export class PlanDescriptionPage {
   thisDay = this.navParams.get('day');
   state_forw = this.navParams.get('btn_forw');
   state_back = this.navParams.get('btn_back');
+  finished = this.navParams.get('finished');
 
   closePage() {
     this.navCtrl.push(PlanPage);
@@ -65,31 +68,27 @@ export class PlanDescriptionPage {
     else {
       this.btn_state1 = true;
     }
-    this.navCtrl.push(PlanDescriptionPage, { 'day': this.nextDay, 'btn_forw': true, 'btn_back': this.btn_state1 });
+    this.navCtrl.setRoot(PlanDescriptionPage, { 'day': this.nextDay, 'btn_forw': true, 'btn_back': this.btn_state1 });
+  }
+
+  finishPage() {
+    this.navCtrl.push(FinalQuestionairPage);
   }
 
   nextPage() {
     this.nextDay = this.thisDay + 1;
     console.log(this.nextDay);
+    
     if (this.nextDay >= 30) {
       this.btn_state2 = false;
+      this.finish = true;
     }
     else {
       this.btn_state2 = true;
+      this.finish = false;
     }
-    let options: NativeTransitionOptions = {
-      direction: 'left',
-      duration: 250,
-      slowdownfactor: -1,
-      slidePixels: 0,
-      iosdelay: 20,
-      androiddelay: 0,
-      fixedPixelsTop: 0,
-      fixedPixelsBottom: 48
-    };
-
-    this.nativePageTransitions.slide(options)
-    this.navCtrl.setRoot(PlanDescriptionPage, { 'day': this.nextDay, 'btn_forw': this.btn_state2, 'btn_back': true });
+    console.log(this.finish);
+    this.navCtrl.setRoot(PlanDescriptionPage, { 'day': this.nextDay, 'btn_forw': this.btn_state2, 'btn_back': true ,'finished': this.finish});
   }
 
   swipePage(event) {
@@ -101,28 +100,28 @@ export class PlanDescriptionPage {
     else {
       this.btn_state2 = true;
     }
-
-    // this.navCtrl.push(PlanDescriptionPage,{'day': this.nextDay,'btn_forw': this.btn_state2, 'btn_back': true});
-    if (event.direction === 2) {
-      let options: NativeTransitionOptions = {
-        direction: 'left',
-        duration: 250,
-        slowdownfactor: -1,
-        slidePixels: 0,
-        iosdelay: 20,
-        androiddelay: 0,
-        fixedPixelsTop: 0,
-        fixedPixelsBottom: 48
-      };
-
-      this.nativePageTransitions.slide(options)
-      this.navCtrl.setRoot(PlanDescriptionPage, { 'day': this.nextDay, 'btn_forw': this.btn_state2, 'btn_back': true });
-      //this.navCtrl.push(HomePage);
-    }
-    else if (event.direction === 4) {
-      this.navCtrl.push(PlanPage);
-    }
   }
+    // this.navCtrl.push(PlanDescriptionPage,{'day': this.nextDay,'btn_forw': this.btn_state2, 'btn_back': true});
+  //   if (event.direction === 2) {
+  //     let options: NativeTransitionOptions = {
+  //       direction: 'left',
+  //       duration: 250,
+  //       slowdownfactor: -1,
+  //       slidePixels: 0,
+  //       iosdelay: 20,
+  //       androiddelay: 0,
+  //       fixedPixelsTop: 0,
+  //       fixedPixelsBottom: 48
+  //     };
+
+  //     this.nativePageTransitions.slide(options)
+  //     this.navCtrl.setRoot(PlanDescriptionPage, { 'day': this.nextDay, 'btn_forw': this.btn_state2, 'btn_back': true });
+  //     //this.navCtrl.push(HomePage);
+  //   }
+  //   else if (event.direction === 4) {
+  //     this.navCtrl.push(PlanPage);
+  //   }
+  // }
 
 
   

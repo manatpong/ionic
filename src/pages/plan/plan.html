@@ -128,7 +128,7 @@
       </div>
       <div class="success-container">
         <div class="text-success">
-          <!-- SUCCESS !! --><button ion-button (click)="popQuestion()">คำถามที่พบบ่อย</button>
+          <!-- SUCCESS !! --><button ion-button (click)="popQuestion(1)">คำถามที่พบบ่อย</button>
         </div>
       </div>
     </div>
@@ -136,7 +136,7 @@
   <div class="foot-container">
     <div class="inner-container">
       <div class="back-container">
-        <button ion-button class="button-back" (click)="backTo()">
+        <button ion-button class="button-back" >
           <ion-icon name="arrow-back" class="arrow-back"></ion-icon>
         </button>
       </div>
@@ -147,7 +147,7 @@
         </div>
       </div>
       <div class="forward-container">
-        <button ion-button class="button-forward" (click)="showDescript(1)">
+        <button ion-button class="button-forward" (click)="goToDesc(1)">
           <ion-icon name="arrow-forward" class="arrow-forward" ></ion-icon>
         </button>
       </div>

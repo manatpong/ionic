@@ -62,11 +62,15 @@ export class PlanPage {
     this.navCtrl.push(PlanDescriptionPage,{'day': value,'btn_forw': true,'btn_back': true});
   }
 
+  goToDesc(value) {
+    this.navCtrl.push(PlanDescriptionPage,{'day': value,'btn_forw': true,'btn_back': false});
+  }
+
   backTo(){
     this.navCtrl.push(HomePage);
   }
 
-  popQuestion() {
-    this.navCtrl.push(PopularQuestionPage);
+  popQuestion(value) {
+    this.navCtrl.push(PopularQuestionPage,{ 'quest': value, 'btn_forw': true,'btn_back': false});
   }
 }
