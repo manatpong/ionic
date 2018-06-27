@@ -1,18 +1,57 @@
-<!--
-  Generated template for the FinalQuestionairPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>final_questionair</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar class="nav-bar">
+      <ion-title >
+        <div class="text">แบบสอบถาม หลังภารกิจ</div>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="bg">
+    <div class="page-container">
+      <div *ngFor="let question of items">
+  
+        <ion-list class="list-item" radio-group [(ngModel)]="question.model">
+          <ion-list-header class="list-head">
+            {{question.data.no}}. {{ question.data.name }}
+          </ion-list-header>
+  
+          <div>
+            <ion-item (click)="onClick()">
+              <ion-label class="fontt">{{ question.data.choice_one }}</ion-label>
+              <!-- <ion-radio checked="true" [(ngModel)]="choice" value="1"></ion-radio> -->
+              <ion-radio name="one" value="1"></ion-radio>
+            </ion-item>
+          </div>
+  
+          <div>
+            <ion-item>
+              <ion-label class="fontt">{{ question.data.choice_two }}</ion-label>
+              <!-- <ion-radio [(ngModel)]="choice" value="2"></ion-radio> -->
+              <ion-radio name="two" value="2"></ion-radio>
+            </ion-item>
+          </div>
+  
+          <div *ngIf="question.data.choice_three">
+            <ion-item>
+              <ion-label class="fontt">{{ question.data.choice_three }}</ion-label>
+              <!-- <ion-radio [(ngModel)]="choice" value="3"></ion-radio> -->
+              <ion-radio name="three" value="3"></ion-radio>
+            </ion-item>
+          </div>
+  
+          <div *ngIf="question.data.choice_four">
+            <ion-item>
+              <ion-label class="fontt">{{ question.data.choice_four }}</ion-label>
+              <!-- <ion-radio [(ngModel)]="choice" value="4"></ion-radio> -->
+              <ion-radio name="four" value="4"></ion-radio>
+            </ion-item>
+          </div>
+        </ion-list>
+      </div>
+  
+  
+      <button class="butt" ion-button full round (click)="posting_data()">ส่งข้อมูล</button>
+      <button ion-button full (click)="onClick()">Test</button>
+    </div>
+  
+  </ion-content>

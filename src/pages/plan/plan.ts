@@ -59,7 +59,13 @@ export class PlanPage {
 
   showDescript(value){
     console.log(value);
-    this.navCtrl.push(PlanDescriptionPage,{'day': value,'btn_forw': true,'btn_back': true});
+    if(value == 30) {
+      this.navCtrl.push(PlanDescriptionPage,{'day': value,'btn_forw': false,'btn_back': true, 'finished': true});
+    }
+    else {
+      this.navCtrl.push(PlanDescriptionPage,{'day': value,'btn_forw': true,'btn_back': true});
+    }
+    
   }
 
   goToDesc(value) {

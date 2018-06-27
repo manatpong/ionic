@@ -36,7 +36,7 @@
             <p>&nbsp;&nbsp;&nbsp;{{ this.text_day }}</p>
             <p>&nbsp;&nbsp;&nbsp;{{ this.text_mid }}</p>
             <p>&nbsp;&nbsp;&nbsp;{{ this.text_noon }}</p>
-        </div>
+          </div>
         </div>
       </div>
       <div class="button-container">
@@ -46,19 +46,21 @@
           </button>
         </div>
         <div class="img-container">
-          <div class="img">
-            <img src="assets/imgs/picture.png">
-            <!-- <img src="http://images.all-free-download.com/images/graphiclarge/harry_potter_icon_6825007.jpg"> -->
+          <div class="img" (click)="showTip()">
+            <!-- <img src="assets/imgs/tip.png"> -->
+            <div class="tip">Tips</div>
+              <ion-icon name="ios-heart" class="ios-heart"></ion-icon>
+        
           </div>
         </div>
         <div class="forward-container">
-          <button  *ngIf="state_forw" ion-button class="button-forward" (click)="nextPage()">
+          <button *ngIf="state_forw" ion-button class="button-forward" (click)="nextPage()">
             <ion-icon name="arrow-forward" class="arrow-forward"></ion-icon>
           </button>
-          <button  *ngIf="finished" ion-button class="button-finish" (click)="finishPage()">
+          <button *ngIf="finished" ion-button class="button-finish" (click)="finishPage()">
             <ion-icon name="md-trophy" class="arrow-forward"></ion-icon>
-              
-            </button>
+
+          </button>
         </div>
       </div>
     </div>

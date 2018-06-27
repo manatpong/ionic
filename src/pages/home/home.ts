@@ -151,13 +151,13 @@ export class HomePage extends BasePage{
 
     this.total_score = this.q1 + this.q2 + this.q3 + this.q4 + this.q5 + this.q6;
 
-    if( this.total_score >= 0 ) {
+    if( this.total_score >= 0 && this.total_score < 4) {
       this.head_text = 'ยินดีด้วย !!';
       this.text = 'คุณไม่ติด Nicotine';
       this.level = 0;
       
     }
-    else if ( this.total_score >= 4) {
+    else if ( this.total_score >= 4 && this.total_score < 8) {
       this.head_text = 'พยายามเข้า !!';
       this.text = 'คุณติด Nicotine ระดับปานกลาง';
       this.level = 1;

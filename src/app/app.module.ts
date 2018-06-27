@@ -1,3 +1,6 @@
+import { TipPage } from './../pages/tip/tip';
+import { FinalResultPage } from './../pages/final-result/final-result';
+import { FinalQuestionairPage } from './../pages/final-questionair/final-questionair';
 import { PopularQuestionPage } from './../pages/popular-question/popular-question';
 import { PlanDescriptionPage } from './../pages/plan-description/plan-description';
 import { PlanPage } from './../pages/plan/plan';
@@ -51,7 +54,10 @@ firebase.initializeApp(config)
     ResultPage,
     PlanPage,
     PlanDescriptionPage,
-    PopularQuestionPage
+    PopularQuestionPage,
+    FinalQuestionairPage,
+    FinalResultPage,
+    TipPage
   ],
   imports: [
     BrowserModule,
@@ -76,7 +82,10 @@ firebase.initializeApp(config)
     ResultPage,
     PlanPage,
     PlanDescriptionPage,
-    PopularQuestionPage
+    PopularQuestionPage,
+    FinalQuestionairPage,
+    FinalResultPage,
+    TipPage
   ],
   providers: [
     StatusBar,

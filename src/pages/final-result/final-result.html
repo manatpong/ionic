@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>result</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content class="no-scroll" padding>
+    <div class="text">
+        <p class="success-text">ส่งข้อมูลสำเร็จ ✓</p>
+        <p class="normal-text">คะแนนประเมิน {{ result['Tscore'] }} / 10</p><br>
+        <p class="normal-text">
+        <span class="lv-0" *ngIf="result['lv']==0">{{ result['Htext'] }}</span>
+        <span class="lv-1" *ngIf="result['lv']==1">{{ result['Htext'] }}</span>
+        <span class="lv-2" *ngIf="result['lv']==2">{{ result['Htext'] }}</span>
+        </p>
+        <p class="normal-text">{{ result['Ntext'] }}</p>
+        <br>
+        <p class="success-text">ขอบคุณที่ใช้งานค่ะ</p>
+        
+    </div>
+    <div class="div-button">
+        <button class="score_button" ion-button round (click)="exitApp()">ออกจากโปรแกรม</button>
+    </div>
+   
+    
+  </ion-content>
+  

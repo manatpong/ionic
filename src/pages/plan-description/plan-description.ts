@@ -1,9 +1,10 @@
+import { TipPage } from './../tip/tip';
 import { FinalQuestionairPage } from './../final-questionair/final-questionair';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 import { HomePage } from './../home/home';
 import { PlanPage } from './../plan/plan';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { LOCALE_DATA } from '@angular/common/src/i18n/locale_data';
 
@@ -33,11 +34,15 @@ export class PlanDescriptionPage {
   data: any;
   finish: boolean = false;
 
+  tip_head: string = '';
+  tip_body: string = '';
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public nativePageTransitions: NativePageTransitions,
     public firebaseFirestore: AngularFirestore,
+    public popoverCtrl: PopoverController,
   ) {
   }
 
@@ -73,6 +78,15 @@ export class PlanDescriptionPage {
 
   finishPage() {
     this.navCtrl.push(FinalQuestionairPage);
+  }
+
+  showTip() {
+    const popover = this.popoverCtrl.create(TipPage,{ 
+      plan: this.thisDay,
+      msg_head: this.tip_head,
+      msg_body: this.tip_body
+     });
+    popover.present();
   }
 
   nextPage() {
@@ -129,7 +143,7 @@ export class PlanDescriptionPage {
     this.data = {
       '1' :{'text': 'Day –  1  สวัสดีค่ะ ก่อนอื่นขอแสดงความยินดีด้วยค่ะ ที่คุณมีความคิดที่ต้องการจะเลิกสูบบุหรี่ เพราะว่าการเลิกสูบบุหรี่นั้นจะเป็นผลดีต่อตัวคุณเองและคนรอบข้างคุณแน่นอนค่ะ เราขอเป็นหนึ่งกำลังใจให้คุณ มาสู้ไปด้วยกันนะคะ',
             'text_day': 'เช้า : หลังตื่นนอนตอนเช้าน้ำผสมมะนาวเพื่อลดความอยากในการสูบบุหรี่  และ ทำกิจวัตร	ประจำวัน อาบน้ำ ล้างหน้า แปรงฟันให้สดชื่น',
-            'text_mid': 'กลางวัน : - หากคุณอยากสูบบุหรี่ให้อมลูกอม ผลไม้ที่มีรสชาติเปรี้ยว หากคุณยังมีอาการอยากสูบบุหรี่อยู่ สามารถเคี้ยวหมากฝรั่ง และใช้ยาที่มีส่วนผสมสารนิโคติน ซึ่งต้องปรึกษาแพทย์ในการใช้ (ลิ้งรายละเอียดหมากฝรั่ง) 	- ระหว่างวันหากมีอาการหงุดหงิด ให้คุณปฏิบัติตามนี้ (ลิ้ง) 	- พยายามหลีกเลี่ยงสิ่งกระตุ้น ที่ทำให้คุณอยากสูบบุหรี่ เช่น สถานที่ที่เคยสูบ อยู่ห่างไฟแช็ก',
+            'text_mid': 'กลางวัน : - หากคุณอยากสูบบุหรี่ให้อมลูกอม ผลไม้ที่มีรสชาติเปรี้ยว หากคุณยังมีอาการอยากสูบบุหรี่อยู่ สามารถเคี้ยวหมากฝรั่ง และใช้ยาที่มีส่วนผสมสารนิโคติน ซึ่งต้องปรึกษาแพทย์ในการใช้	- ระหว่างวันหากมีอาการหงุดหงิด ให้คุณปฏิบัติตามนี้ 	- พยายามหลีกเลี่ยงสิ่งกระตุ้น ที่ทำให้คุณอยากสูบบุหรี่ เช่น สถานที่ที่เคยสูบ อยู่ห่างไฟแช็ก',
             'text_noon': 'เย็น : 	- ออกกำลังกายและรับประทานอาหารที่มีประโยชน์ 	- หลีกเลี่ยงการพบปะสังคมเพื่อนที่ชวนให้กลับไปสูบบุหรี่ 	- หากรู้สึกอยากสูบบุหรี่แนะนำให้ดื่มน้ำมะนาว',
             'tip_head': 'ถ้าเลิกบุหรี่กะทันหันอันตรายไหม ผลข้างเคียงร้ายเเรงแค่ไหน',
             'tip_body': 'ตอบ การเลิกบุหรี่แบบหักดิบ อาจทำให้เกิดอาการกระวนกระวาย เปรี้ยวปากอยากสูบ หงุดหงิด นอนไม่หลับ อ่อนเพลีย ไม่สุขสบายตัวได้ แต่โดยทั่วไปอาการผิดปกติเหล่านี้จะค่อยๆหายไปหลังจากหยุดบุหรี่ได้ตั้งแต่ 2สัปดาห์-1เดือนขึ้นไป ระหว่างอดบุหรี่ควรออกกำลังกายทุกวัน พยายามจิบน้ำเปล่าบ่อยๆ หรืออาจใช้สมุนไพรกานพลู มะนาว มะขามเปียก ก็จะช่วยลดอาการหงุดหงิดเปรี้ยวปากได้เช่นกัน'
@@ -371,7 +385,8 @@ export class PlanDescriptionPage {
     this.text_day = this.data[this.thisDay]['text_day'];
     this.text_mid = this.data[this.thisDay]['text_mid'];
     this.text_noon = this.data[this.thisDay]['text_noon'];
-
+    this.tip_head = this.data[this.thisDay]['tip_head'];
+    this.tip_body = this.data[this.thisDay]['tip_body'];
 
   }
 
