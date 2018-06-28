@@ -1,3 +1,4 @@
+import { PlanPage } from './../plan/plan';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
@@ -39,6 +40,8 @@ export class FinalResultPage {
   result = this.navParams.data; // ใช้แบบไหนก็ได้
   // text = this.navParams.get('Ntext');
 
-
+  backTo() {
+    this.navCtrl.push(PlanPage);
+  }
 }
 

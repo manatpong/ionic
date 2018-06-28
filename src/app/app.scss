@@ -55,6 +55,8 @@ ion-app.md [padding] .scroll-content {
 }
 
 
+
+
 /* Sections
      ========================================================================== */
 
@@ -65,7 +67,12 @@ ion-app.md [padding] .scroll-content {
 
 body {
     margin: 0;
+    .popover-content {
+        border-radius: 20px;
+    }
+    
 }
+
 
 
 /**
@@ -80,6 +87,8 @@ nav,
 section {
     display: block;
 }
+
+
 
 
 

@@ -1,3 +1,4 @@
+import { PlanPage } from './../plan/plan';
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { Component } from '@angular/core';
@@ -30,6 +31,7 @@ export class HomePage extends BasePage{
   head_text: string = '';
   text: string = '';
   level: number;
+  answer: any;
   datenow = new Date();
     month = this.datenow.getMinutes();
 
@@ -47,7 +49,7 @@ export class HomePage extends BasePage{
 
   ionViewDidLoad() {
     this.uid = this.firebaseAuth.auth.currentUser.uid;
-    
+    this.checkUser()
     this.firebaseFirestore
     .collection('question')
     .snapshotChanges()
@@ -62,9 +64,9 @@ export class HomePage extends BasePage{
           model : null,
           score : null,
         })
-        console.log(this.items);
-        console.log(this.items.data);
-        console.log(this.month);
+        // console.log(this.items);
+        // console.log(this.items.data);
+        // console.log(this.month);
       });
 
     })
@@ -211,5 +213,25 @@ export class HomePage extends BasePage{
       }
 
   }
+
+  checkUser() {
+    this.uid = this.firebaseAuth.auth.currentUser.uid; //ดึง uid มาก่อน จะได้เอา uid นี้ไป select ข้อมูลนั้นมา
+    this.firebaseFirestore
+      .collection('users')
+      .doc(this.uid)
+      .collection('answer')
+      .valueChanges()
+      .subscribe((data:any) =>{
+        this.answer = data.length;
+         //console.log('incheckuser');
+         //console.log(this.answer);
+         if(this.answer != 0 ) {
+          this.navCtrl.push(PlanPage);
+          //console.log('answer != 0')
+        }
+      })
+      
+  }
+  
 
 }

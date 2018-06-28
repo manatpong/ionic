@@ -30,14 +30,38 @@ page-final-result {
         padding-bottom: 6px;
     }
     .div-button{
+        display: flex;
         width: 100%;
-        .score_button{
-            width: 70%;
-            height: 25px;
-            font-size: 14px;
-            margin-left: 20px;
-            margin-top: 20px;
+        height: 40px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        justify-content: center;
+        align-items: center;
+        .contain-back {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            .score_button{
+                width: 100%;
+                height: 20px;
+                font-size: 16px;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
         }
+        .contain-exit {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            .backTo{
+                width: 100%;
+                height: 25px;
+                font-size: 18px;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+        }
+        
     }
     
 }
