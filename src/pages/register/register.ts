@@ -53,6 +53,7 @@ export class RegisterPage extends BasePage{
     .auth
     .createUserWithEmailAndPassword(this.email,this.password)
     .then((user) => {
+      this.showToast('สมัครสมาชิกสำเร็จ!')
       user.updateProfile({
         displayName : this.displayName,
         photoURL : 'https://www.thewrap.com/wp-content/uploads/2015/11/Donald-Trump.jpg'
@@ -69,7 +70,7 @@ export class RegisterPage extends BasePage{
           age : this.age
         })
         .then(data =>{
-
+         // this.navCtrl.setRoot(LoginPage);
         })
         .catch(error => {
 

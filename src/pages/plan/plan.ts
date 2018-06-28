@@ -1,10 +1,11 @@
+import { LoginPage } from './../login/login';
 import { PopularQuestionPage } from './../popular-question/popular-question';
 import { HomePage } from './../home/home';
 import { PlanDescriptionPage } from './../plan-description/plan-description';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the PlanPage page.
@@ -27,7 +28,8 @@ export class PlanPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public firebaseAuth: AngularFireAuth,
-    public firebaseFirestore: AngularFirestore
+    public firebaseFirestore: AngularFirestore,
+    public alertCtrl: AlertController
   ) {
   }
 
@@ -78,5 +80,34 @@ export class PlanPage {
 
   popQuestion(value) {
     this.navCtrl.push(PopularQuestionPage,{ 'quest': value, 'btn_forw': true,'btn_back': false});
+  }
+
+  logout(){
+    //log out all
+    let alert = this.alertCtrl.create({
+      title: 'ยืนยัน',
+      message: 'ออกจากระบบใช่หรือไม่?',
+      buttons: [
+        {
+          text: 'ออกจากระบบ',
+          
+          handler: () => {
+            this.firebaseAuth.auth.signOut(); 
+            this.navCtrl.push(LoginPage);
+            console.log('Cancel clicked');
+            console.log(this.uid);
+          }
+        },
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: () => {
+            console.log('Buy clicked');
+            
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 }

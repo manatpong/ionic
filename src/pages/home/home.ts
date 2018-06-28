@@ -49,6 +49,7 @@ export class HomePage extends BasePage{
 
   ionViewDidLoad() {
     this.uid = this.firebaseAuth.auth.currentUser.uid;
+    console.log(this.uid);
     this.checkUser()
     this.firebaseFirestore
     .collection('question')

@@ -52,6 +52,26 @@ page-plan {
                             margin: auto;
                             margin: 0px;
                         }
+                        
+                    }
+                    
+                    
+                }
+                .close-container {
+                    position: absolute;
+                    z-index: 1;
+                    width: 100%;
+                    
+                    .close-button {
+                        font-size: 25px;
+                        font-weight: 600;
+                        margin-top: 5px;
+                        align-items: right;
+                        justify-content: right;
+                        .close-but {
+                            float: right;
+                            font-weight: 1000;
+                        }
                     }
                 }
             }
@@ -179,6 +199,15 @@ page-plan {
                     width: 45%;
                     height: 80px;
                     margin: 0px;
+                }
+                .img:hover {
+                    width: 50%;
+                    height: 82px;
+                }
+                .img:active {
+                    
+                    width: 40%;
+                        height: 77px;
                 }
             }
             .forward-container {

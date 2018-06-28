@@ -31,7 +31,7 @@ export class ResultPage {
   }
 
   navigateCalender() {
-    this.navCtrl.push(PlanPage);
+    this.navCtrl.setRoot(PlanPage);
   }
 
   

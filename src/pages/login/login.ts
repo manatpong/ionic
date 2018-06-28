@@ -132,7 +132,7 @@ export class LoginPage extends BasePage {
     .signInAndRetrieveDataWithEmailAndPassword(this.email, this.password)
     .then((user) => {
       this.hideLoading()
-      this.navCtrl.push(HomePage);
+      this.navCtrl.setRoot(HomePage);
       //this.showToast('Login Success');
 
     })
